@@ -32,6 +32,10 @@
   display: inline-flex;
   align-items: center;
   gap: 10px;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
 }
 
 .nav-logo-image {

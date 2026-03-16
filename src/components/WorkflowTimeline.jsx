@@ -66,7 +66,7 @@ export default function WorkflowTimeline() {
 
   return (
     <div className="workflow">
-      <div className="section-label">How an analysis works</div>
+      <div className="section-label">How Chronr works</div>
       <h2>
         From case intake
         <br />

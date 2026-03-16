@@ -31,7 +31,7 @@ function Hero() {
               className="btn-primary"
               onClick={() => window.scrollTo(0, 0)}
             >
-              Book a demo
+              Get started
             </Link>
           </div>
 
