@@ -39,11 +39,11 @@ function Hero() {
           <div className="hero-stats">
             <div className="hero-stat">
               <div className="hero-stat-num">2× faster</div>
-              <div className="hero-stat-label">analysis</div>
+              <div className="hero-stat-label">Analysis</div>
             </div>
             <div className="hero-stat-divider" />
             <div className="hero-stat">
-              <div className="hero-stat-num" style={{ fontSize: '2rem' }}>Effortless</div>
+              <div className="hero-stat-num">Effortless</div>
               <div className="hero-stat-label">Implementation</div>
             </div>
           </div>

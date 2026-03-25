@@ -51,11 +51,18 @@ export default function WorkflowTimeline() {
       if (!el) return
       const rect = el.getBoundingClientRect()
       const windowH = window.innerHeight
-      const start = windowH * 0.75
-      const end   = windowH * 0.15
-      const raw   = (start - rect.top) / (rect.height - (start - end))
-      const pct   = Math.min(100, Math.max(0, raw * 100))
-      setFillPct(pct)
+      const start = windowH * 0.84
+      const end = windowH * 0.1
+      const span = rect.height + (start - end) * 0.58
+      const raw = (start - rect.top) / span
+      const clamped = Math.min(1, Math.max(0, raw))
+      const eased = Math.pow(clamped, 1.12)
+      const targetPct = eased * 100
+
+      setFillPct((prev) => {
+        const next = prev + (targetPct - prev) * 0.24
+        return Math.abs(next - targetPct) < 0.08 ? targetPct : next
+      })
 
       const active = stepRefs.current.map((ref) => {
         if (!ref) return false
