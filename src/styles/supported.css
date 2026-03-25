@@ -2,7 +2,7 @@
 .supported {
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
-  padding: 72px 0;
+  padding: 42px 0;
 }
 
 .supported-inner {
@@ -11,14 +11,14 @@
   padding: 0 52px;
   display: flex;
   flex-direction: column;
-  gap: 56px;
+  gap: 34px;
 }
 
 .supported-top {
   display: flex;
   align-items: center;
   gap: 0;
-  padding-bottom: 56px;
+  padding-bottom: 24px;
   border-bottom: 1px solid var(--border);
   overflow: hidden;
 }
@@ -66,7 +66,7 @@
 .scroll-inner {
   display: flex;
   align-items: center;
-  gap: 38px;
+  gap: 20px;
   width: max-content;
   animation: scroll-left 18s linear infinite;
 }
@@ -74,7 +74,7 @@
 .partner-group {
   display: flex;
   align-items: center;
-  gap: 38px;
+  gap: 20px;
 }
 
 @keyframes scroll-left {
@@ -89,25 +89,27 @@
 .partner {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 8px;
   flex-shrink: 0;
-  padding: 14px 18px;
-  background: rgba(255,255,255,0.72);
-  border: 1px solid rgba(226, 224, 217, 0.95);
-  box-shadow: 0 16px 40px rgba(15,17,23,0.04);
+  padding: 10px 12px;
+  background: var(--surface-strong);
+  border: 1px solid color-mix(in srgb, var(--border) 84%, white 16%);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .partner:hover {
   transform: translateY(-3px);
-  box-shadow: 0 22px 52px rgba(15,17,23,0.08);
+  box-shadow: var(--shadow-md);
 }
 
 .partner-logo {
   width: 52px;
   height: 38px;
-  border: 1px solid rgba(15,17,23,0.08);
-  background: linear-gradient(135deg, rgba(15,17,23,0.96), rgba(59,65,83,0.88));
+  border: 1px solid color-mix(in srgb, var(--brand) 36%, var(--border) 64%);
+  background: linear-gradient(135deg, color-mix(in srgb, var(--brand-strong) 88%, #101018 12%), color-mix(in srgb, var(--brand) 72%, #1f1b2d 28%));
+  border-radius: 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -154,19 +156,19 @@
 
 @media (max-width: 900px) {
   .supported {
-    padding: 56px 0;
+    padding: 36px 0;
   }
 
   .supported-inner {
     padding: 0 24px;
-    gap: 34px;
+    gap: 22px;
   }
 
   .supported-top {
     flex-direction: column;
     align-items: stretch;
-    gap: 20px;
-    padding-bottom: 24px;
+    gap: 12px;
+    padding-bottom: 12px;
   }
 
   .supported-claim {
@@ -182,11 +184,11 @@
 
   .scroll-inner,
   .partner-group {
-    gap: 18px;
+    gap: 10px;
   }
 
   .partner {
-    padding: 10px 12px;
+    padding: 8px 10px;
   }
 
   .partner-name {
@@ -200,7 +202,7 @@
 
 @media (max-width: 640px) {
   .supported {
-    padding: 44px 0;
+    padding: 28px 0;
   }
 
   .supported-inner {

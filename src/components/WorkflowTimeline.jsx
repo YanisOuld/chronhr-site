@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import { Link } from 'react-router-dom'
 
 const steps = [
   {
@@ -34,12 +35,17 @@ const steps = [
 ]
 
 export default function WorkflowTimeline() {
+  const isMobile = typeof window !== 'undefined' && window.matchMedia('(max-width: 640px)').matches
   const timelineRef = useRef(null)
   const stepRefs = useRef([])
-  const [fillPct, setFillPct] = useState(0)
-  const [activeSteps, setActiveSteps] = useState([])
+  const [fillPct, setFillPct] = useState(isMobile ? 100 : 0)
+  const [activeSteps, setActiveSteps] = useState(isMobile ? steps.map(() => true) : [])
 
   useEffect(() => {
+    if (isMobile) {
+      return undefined
+    }
+
     const onScroll = () => {
       const el = timelineRef.current
       if (!el) return
@@ -62,11 +68,11 @@ export default function WorkflowTimeline() {
     window.addEventListener('scroll', onScroll, { passive: true })
     onScroll()
     return () => window.removeEventListener('scroll', onScroll)
-  }, [])
+  }, [isMobile])
 
   return (
     <div className="workflow">
-      <div className="section-label">How Chronr works</div>
+      <div className="section-label">How Chronhr works</div>
       <h2>
         From case intake
         <br />
@@ -74,6 +80,21 @@ export default function WorkflowTimeline() {
       </h2>
 
       <div className="timeline" ref={timelineRef}>
+        <svg
+          className="timeline-snake"
+          viewBox="0 0 100 1000"
+          preserveAspectRatio="none"
+          aria-hidden="true"
+        >
+          <path
+            className="timeline-snake-path"
+            d="M50 24 C50 98 16 142 16 212 C16 292 84 334 84 406 C84 486 16 530 16 602 C16 678 84 724 84 804 C84 886 50 928 50 978"
+          />
+          <path
+            className="timeline-snake-glow"
+            d="M50 24 C50 98 16 142 16 212 C16 292 84 334 84 406 C84 486 16 530 16 602 C16 678 84 724 84 804 C84 886 50 928 50 978"
+          />
+        </svg>
 
         {/* background track */}
         <div className="timeline-track" />
@@ -87,25 +108,36 @@ export default function WorkflowTimeline() {
         {steps.map((step, i) => (
           <div
             key={step.num}
-            className={`step ${activeSteps[i] ? 'step--active' : ''}`}
+            className={`step step--n${i + 1} ${i % 2 === 0 ? 'step--left' : 'step--right'} ${i === steps.length - 1 ? 'step--last' : ''} ${activeSteps[i] ? 'step--active' : ''}`}
             ref={(el) => (stepRefs.current[i] = el)}
           >
-            {/* dot on the line */}
-            <div className="step-dot" />
-
-            <div className="step-meta">
-              <div className="step-title">{step.title}</div>
+            <div className="step-node" aria-hidden="true">
+              <div className="step-dot" />
             </div>
-            <div className="step-content">
+
+            <article className="step-content">
+              <div className="step-title">{step.title}</div>
               <p className="step-desc">{step.desc}</p>
-              <div className="tools">
+              <div className="tools" role="list" aria-label={`${step.title} capabilities`}>
                 {step.tools.map((t) => (
-                  <div key={t} className="tool">{t}</div>
+                  <span key={t} className="tool-item" role="listitem">
+                    <span className="tool-bullet" aria-hidden="true" />
+                    <span className="tool-text">{t}</span>
+                  </span>
                 ))}
               </div>
-            </div>
+            </article>
           </div>
         ))}
+
+        <div className="timeline-cta" aria-label="Timeline actions">
+          <Link to="/get-started" className="timeline-cta-btn timeline-cta-btn-primary">
+            Book a demo
+          </Link>
+          <Link to="/roi" className="timeline-cta-btn timeline-cta-btn-ghost">
+            ROI Calculator
+          </Link>
+        </div>
       </div>
     </div>
   )

@@ -5,7 +5,7 @@ function CtaBand() {
     <div className="cta-band">
       <div className="cta-inner">
         <div className="cta-title">
-          Ready to see it
+          <span className="cta-title-accent">Ready to see it</span>
           <br />
           <em>in action?</em>
         </div>

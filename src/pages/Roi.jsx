@@ -49,7 +49,7 @@ export default function Roi() {
   const fmt = (n) => Math.round(n).toLocaleString('en-CA')
 
   return (
-    <div>
+    <div className="roi-page">
       {/* header copied from HTML snippet */}
       <div className="page-header">
         <div>

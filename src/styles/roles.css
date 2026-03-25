@@ -9,18 +9,27 @@
 .roles-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
 }
 
 .role-item {
-  padding: 0 32px 0 0;
-  margin-right: 32px;
-  border-right: 1px solid var(--border);
+  padding: 20px 16px;
+  margin-right: 0;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
 .role-item:last-child {
-  border-right: none;
-  padding-right: 0;
-  margin-right: 0;
+  border-right: 1px solid var(--border);
+}
+
+.role-item:hover {
+  transform: translateY(-3px);
+  border-color: color-mix(in srgb, var(--brand) 35%, var(--border) 65%);
+  box-shadow: var(--shadow-md);
 }
 
 .role-num {
@@ -28,7 +37,13 @@
   font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--muted);
+  color: var(--brand);
+  background: color-mix(in srgb, var(--brand-soft) 84%, white 16%);
+  border: 1px solid color-mix(in srgb, var(--brand) 30%, var(--border) 70%);
+  border-radius: 0;
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 9px;
   margin-bottom: 20px;
 }
 
@@ -57,9 +72,8 @@
   }
 
   .role-item {
-    padding: 0;
     margin-right: 0;
-    border-right: none;
+    border-right: 1px solid var(--border);
   }
 }
 
@@ -74,12 +88,11 @@
   }
 
   .role-item {
-    padding-bottom: 16px;
+    padding: 16px 14px;
     border-bottom: 1px solid var(--border);
   }
 
   .role-item:last-child {
-    border-bottom: none;
-    padding-bottom: 0;
+    border-bottom: 1px solid var(--border);
   }
 }
