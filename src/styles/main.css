@@ -8,6 +8,7 @@
 @import './advisory.css';
 @import './about.css';
 @import './getStarted.css';
+@import './singlePage.css';
 @import './footer.css';
 
 /* prevent sideways scroll from 100vw, etc. */

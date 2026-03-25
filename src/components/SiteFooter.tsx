@@ -1,5 +1,14 @@
 import { Link } from "react-router-dom"
 
+const NAV_OFFSET = 78
+
+function scrollToSection(id: string) {
+  const target = document.getElementById(id)
+  if (!target) return
+  const y = target.getBoundingClientRect().top + window.scrollY - NAV_OFFSET
+  window.scrollTo({ top: y, behavior: 'smooth' })
+}
+
 function SiteFooter() {
   return (
     <footer>
@@ -19,10 +28,9 @@ function SiteFooter() {
           <div>
             <div className="footer-col-title">Pages</div>
             <ul className="footer-links">
-              <li><Link to="/">Home</Link></li>
-              <li><Link to="/about">About</Link></li>
-              <li><Link to="/team">Meet the team</Link></li>
-              <li><Link to="/roi">Pricing</Link></li>
+              <li><button type="button" onClick={() => scrollToSection('home')}>Home</button></li>
+              <li><button type="button" onClick={() => scrollToSection('tech')}>Technology</button></li>
+              <li><button type="button" onClick={() => scrollToSection('team')}>Meet the team</button></li>
               <li><Link to="/get-started">Get started</Link></li>
             </ul>
           </div>

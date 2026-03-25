@@ -23,14 +23,14 @@ footer {
   font-size: 0.8rem;
   font-weight: 700;
   letter-spacing: 0.08em;
-  color: rgba(247,246,242,0.45);
+  color: rgba(247,246,242,0.95);
   margin-bottom: 6px;
 }
 
 .footer-brand-desc {
   font-size: 0.74rem;
   line-height: 1.45;
-  color: rgba(247,246,242,0.2);
+  color: rgba(247,246,242,0.78);
 }
 
 .footer-col-title {
@@ -38,7 +38,7 @@ footer {
   font-weight: 600;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: rgba(247,246,242,0.2);
+  color: rgba(247,246,242,0.72);
   margin-bottom: 9px;
 }
 
@@ -49,15 +49,32 @@ footer {
   gap: 5px;
 }
 
-.footer-links a {
+.footer-links a,
+.footer-links button {
   font-size: 0.76rem;
-  color: rgba(247,246,242,0.3);
+  line-height: 1.35;
+  font-weight: 400;
+  font-family: 'IBM Plex Sans', sans-serif;
+  color: rgba(247,246,242,0.9);
   text-decoration: none;
   transition: color 0.15s;
 }
 
+.footer-links button {
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  text-align: left;
+}
+
 .footer-links a:hover {
-  color: rgba(247,246,242,0.65);
+  color: rgba(247,246,242,1);
+}
+
+.footer-links button:hover {
+  color: rgba(247,246,242,1);
 }
 
 .footer-bottom {
@@ -65,7 +82,7 @@ footer {
   justify-content: space-between;
   align-items: center;
   font-size: 0.68rem;
-  color: rgba(247,246,242,0.18);
+  color: rgba(247,246,242,0.72);
 }
 
 .footer-legal {
@@ -74,13 +91,13 @@ footer {
 }
 
 .footer-legal a {
-  color: rgba(247,246,242,0.18);
+  color: rgba(247,246,242,0.78);
   text-decoration: none;
   transition: color 0.15s;
 }
 
 .footer-legal a:hover {
-  color: rgba(247,246,242,0.45);
+  color: rgba(247,246,242,1);
 }
 
 @media (max-width: 900px) {

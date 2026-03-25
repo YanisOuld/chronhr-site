@@ -1,0 +1,183 @@
+.single-page-section {
+  scroll-margin-top: 78px;
+}
+
+.single-page .hero-top {
+  padding-top: 118px;
+  padding-bottom: 34px;
+}
+
+.single-page-about .page-header {
+  padding-top: 38px;
+  padding-bottom: 38px;
+  gap: 30px;
+}
+
+.single-page-about .page-eyebrow {
+  margin-bottom: 14px;
+}
+
+.single-page-about .header-subtitle {
+  margin-top: 18px;
+}
+
+.single-page-tech {
+  border-top: 1px solid var(--border);
+}
+
+.single-page-tech .workflow {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.single-page-tech .step {
+  padding-bottom: 10px;
+}
+
+.single-page .how,
+.single-page .roles-inner,
+.single-page .why-section,
+.single-page .why,
+.single-page .founders-grid-wrap {
+  padding-top: 28px;
+  padding-bottom: 28px;
+}
+
+.single-page .section-label {
+  margin-bottom: 10px;
+}
+
+.single-page .how h2,
+.single-page .roles h2,
+.single-page .why-title-main,
+.single-page .single-page-contact h2 {
+  margin-bottom: 22px;
+}
+
+.single-page .founders-label {
+  margin-bottom: 20px;
+}
+
+.single-page-team {
+  border-top: 1px solid var(--border);
+}
+
+.single-page-supported {
+  padding: 28px 0;
+}
+
+.single-page-supported .supported-inner {
+  gap: 22px;
+}
+
+.single-page-supported .supported-top {
+  padding-bottom: 20px;
+}
+
+.single-page-contact-wrap {
+  border-top: 1px solid var(--border);
+}
+
+.single-page-contact {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 32px 52px;
+}
+
+.single-page-contact-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin-bottom: 12px;
+}
+
+.single-page-contact-desc {
+  max-width: 540px;
+  font-size: 0.92rem;
+  line-height: 1.7;
+  color: var(--ink);
+  margin-bottom: 14px;
+}
+
+.single-page .left-contact {
+  margin-top: 0;
+}
+
+@media (max-width: 900px) {
+  .single-page .hero-top {
+    padding-top: 106px;
+    padding-bottom: 26px;
+  }
+
+  .single-page-about .page-header {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    gap: 24px;
+  }
+
+  .single-page-tech .workflow {
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+
+  .single-page-tech .step {
+    padding-bottom: 8px;
+  }
+
+  .single-page .how,
+  .single-page .roles-inner,
+  .single-page .why-section,
+  .single-page .why,
+  .single-page .founders-grid-wrap {
+    padding-top: 22px;
+    padding-bottom: 22px;
+  }
+
+  .single-page-contact {
+    padding: 28px 24px;
+  }
+}
+
+@media (max-width: 640px) {
+  .single-page .hero-top {
+    padding-top: 92px;
+    padding-bottom: 20px;
+  }
+
+  .single-page-about .page-header {
+    padding-top: 24px;
+    padding-bottom: 24px;
+    gap: 16px;
+  }
+
+  .single-page-tech .workflow {
+    padding-top: 18px;
+    padding-bottom: 18px;
+  }
+
+  .single-page-tech .step {
+    padding-bottom: 6px;
+  }
+
+  .single-page .how,
+  .single-page .roles-inner,
+  .single-page .why-section,
+  .single-page .why,
+  .single-page .founders-grid-wrap {
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+
+  .single-page .how h2,
+  .single-page .roles h2,
+  .single-page .why-title-main,
+  .single-page .single-page-contact h2 {
+    margin-bottom: 14px;
+  }
+
+  .single-page-contact {
+    padding: 22px 18px;
+  }
+}

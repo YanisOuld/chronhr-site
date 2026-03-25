@@ -1,28 +1,41 @@
-import { useState, useRef, useEffect } from "react";
-import { Link, NavLink, useLocation } from "react-router-dom";
+import { useEffect, useRef, useState } from "react";
+import type { MouseEvent } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const brandLogo = "/transparent_logo.png";
 
 const links = [
-  { label: "Home", to: "/", key: "home" },
-  { label: "How it works", to: "/about", key: "about" },
-  {
-    label: "Company",
-    key: "company",
-    dropdown: [
-      { label: "Meet the team", to: "/team", desc: "The people behind Chronhr" },
-      { label: "ROI", to: "/roi", desc: "ROI calculator & plans" },
-    ],
-  },
+  { label: "How", id: "how" },
+  { label: "Tech", id: "tech" },
+  { label: "Team", id: "team" },
+  { label: "Contact", id: "contact" },
 ];
 
+const NAV_OFFSET = 78;
+
+function scrollToSection(id: string) {
+  const target = document.getElementById(id);
+  if (!target) return;
+  const y = target.getBoundingClientRect().top + window.scrollY - NAV_OFFSET;
+  window.scrollTo({ top: y, behavior: "smooth" });
+}
+
 function Nav() {
-  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const [activeSection, setActiveSection] = useState("home");
   const [underline, setUnderline] = useState({ left: 0, width: 0, opacity: 0 });
-  const navRootRef = useRef<HTMLElement | null>(null);
   const navLinksRef = useRef<HTMLUListElement | null>(null);
-  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const location = useLocation();
+  const navigate = useNavigate();
+
+  function goToSection(id: string) {
+    if (location.pathname !== "/") {
+      navigate("/");
+      setTimeout(() => scrollToSection(id), 80);
+      return;
+    }
+
+    scrollToSection(id);
+  }
 
   function moveUnderline(el: HTMLElement) {
     if (!navLinksRef.current) return;
@@ -38,80 +51,57 @@ function Nav() {
   useEffect(() => {
     const el = navLinksRef.current?.querySelector(".nav-link-active") as HTMLElement | null;
     if (el) moveUnderline(el);
-  }, [location.pathname]);
+  }, [activeSection]);
 
   useEffect(() => {
+    const sections = links
+      .map((link) => document.getElementById(link.id))
+      .filter(Boolean) as HTMLElement[];
+
+    if (sections.length === 0) return;
+
+    function updateActiveSection() {
+      const focusLine = window.innerHeight * 0.35;
+      let current = sections[0].id;
+
+      for (const section of sections) {
+        const rect = section.getBoundingClientRect();
+        if (rect.top <= focusLine) current = section.id;
+      }
+
+      setActiveSection(current);
+    }
+
+    window.addEventListener("scroll", updateActiveSection, { passive: true });
+    updateActiveSection();
+
     return () => {
-      if (closeTimer.current) clearTimeout(closeTimer.current);
+      window.removeEventListener("scroll", updateActiveSection);
     };
   }, []);
 
-  useEffect(() => {
-    function handleOutsideClose(event: MouseEvent | TouchEvent) {
-      const target = event.target as Node;
-      if (!navRootRef.current?.contains(target)) {
-        setOpenDropdown(null);
-      }
-    }
-
-    function handleEsc(event: KeyboardEvent) {
-      if (event.key === "Escape") {
-        setOpenDropdown(null);
-      }
-    }
-
-    document.addEventListener("mousedown", handleOutsideClose);
-    document.addEventListener("touchstart", handleOutsideClose, { passive: true });
-    document.addEventListener("keydown", handleEsc);
-
-    return () => {
-      document.removeEventListener("mousedown", handleOutsideClose);
-      document.removeEventListener("touchstart", handleOutsideClose);
-      document.removeEventListener("keydown", handleEsc);
-    };
-  }, []);
-
-  function handleMouseEnter(
-    e: React.MouseEvent<HTMLElement>,
-    key: string,
-  ) {
-    if (closeTimer.current) clearTimeout(closeTimer.current);
+  function handleMouseEnter(e: MouseEvent<HTMLElement>) {
     moveUnderline(e.currentTarget);
-    if (links.find((l) => l.key === key)?.dropdown) {
-      setOpenDropdown(key);
-    }
   }
 
   function handleMouseLeave() {
     const el = navLinksRef.current?.querySelector(".nav-link-active") as HTMLElement | null;
     if (el) moveUnderline(el);
     else setUnderline((u) => ({ ...u, opacity: 0 }));
-
-    closeTimer.current = setTimeout(() => setOpenDropdown(null), 180);
   }
-
-  function handleDropdownEnter() {
-    if (closeTimer.current) clearTimeout(closeTimer.current);
-  }
-
-  function handleDropdownLeave() {
-    closeTimer.current = setTimeout(() => setOpenDropdown(null), 180);
-
-    const el = navLinksRef.current?.querySelector(".nav-link-active") as HTMLElement | null;
-    if (el) moveUnderline(el);
-    else setUnderline((u) => ({ ...u, opacity: 0 }));
-  }
-
-  const isCompanyActive =
-    location.pathname === "/team" || location.pathname === "/roi";
 
   return (
-    <nav className="nav" ref={navRootRef}>
+    <nav className="nav">
       <div className="nav-inner">
-        <Link to="/" className="nav-logo" aria-label="Chronhr home">
+        <button
+          type="button"
+          className="nav-logo"
+          aria-label="Chronhr home"
+          onClick={() => goToSection("home")}
+        >
           <img src={brandLogo} alt="Chronhr" className="nav-logo-image" />
           <span className="nav-logo-text">CHRONHR</span>
-        </Link>
+        </button>
 
         <ul className="nav-links" ref={navLinksRef}>
           <div
@@ -124,75 +114,26 @@ function Nav() {
           />
 
           {links.map((link) => (
-            <li key={link.key} style={{ position: "relative" }}>
-              {link.dropdown ? (
-                <>
-                  <button
-                    type="button"
-                    className={`nav-link ${isCompanyActive ? "nav-link-active" : ""}`}
-                    onMouseEnter={(e) => handleMouseEnter(e, link.key)}
-                    onMouseLeave={handleMouseLeave}
-                    aria-haspopup="menu"
-                    aria-expanded={openDropdown === link.key}
-                    onClick={() =>
-                      setOpenDropdown((prev) => (prev === link.key ? null : link.key))
-                    }
-                  >
-                    {link.label}
-                    <span
-                      className="nav-chevron"
-                      style={{
-                        transform:
-                          openDropdown === link.key ? "rotate(180deg)" : "rotate(0deg)",
-                      }}
-                    >
-                      ‹
-                    </span>
-                  </button>
-
-                  <div
-                    className={`nav-dropdown ${openDropdown === link.key ? "nav-dropdown-open" : ""}`}
-                    onMouseEnter={handleDropdownEnter}
-                    onMouseLeave={handleDropdownLeave}
-                  >
-                    {link.dropdown.map((item) => (
-                      <NavLink
-                        key={item.to}
-                        to={item.to}
-                        className="nav-dropdown-item"
-                        onClick={() => setOpenDropdown(null)}
-                      >
-                        <span className="nav-dropdown-label">{item.label}</span>
-                        <span className="nav-dropdown-desc">{item.desc}</span>
-                      </NavLink>
-                    ))}
-                  </div>
-                </>
-              ) : (
-                <NavLink
-                  to={link.to!}
-                  className={({ isActive }) =>
-                    `nav-link ${isActive ? "nav-link-active" : ""}`
-                  }
-                  onMouseEnter={(e) => handleMouseEnter(e, link.key)}
-                  onMouseLeave={handleMouseLeave}
-                >
-                  {link.label}
-                </NavLink>
-              )}
+            <li key={link.id} style={{ position: "relative" }}>
+              <button
+                type="button"
+                className={`nav-link ${activeSection === link.id ? "nav-link-active" : ""}`}
+                onClick={() => goToSection(link.id)}
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+              >
+                {link.label}
+              </button>
             </li>
           ))}
         </ul>
 
-        <NavLink
+        <Link
           to="/get-started"
-          className={({ isActive }) =>
-            `nav-cta ${isActive ? "nav-cta-active" : ""}`
-          }
-          onClick={() => window.scrollTo(0, 0)}
+          className="nav-cta"
         >
-          Book a demo
-        </NavLink>
+          Get started
+        </Link>
       </div>
     </nav>
   );

@@ -6,7 +6,7 @@
   user-select: none;
   -webkit-user-select: none;
   overflow: hidden;
-  background: #F7F4EF;
+  background: var(--bg);
   z-index: -2147483647 !important;
 }
 
@@ -26,7 +26,7 @@
 .orb-1 {
   width: 900px;
   height: 900px;
-  background: radial-gradient(circle, rgba(210, 100, 20, 0.08) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(115, 84, 133, 0.12) 0%, transparent 70%);
   top: -300px;
   right: -200px;
   animation: float1 52s ease-in-out infinite;
@@ -35,7 +35,7 @@
 .orb-2 {
   width: 600px;
   height: 600px;
-  background: radial-gradient(circle, rgba(180, 70, 10, 0.14) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(94, 67, 112, 0.16) 0%, transparent 70%);
   bottom: -180px;
   left: -120px;
   animation: float2 44s ease-in-out infinite;
@@ -57,7 +57,7 @@
 .ripple {
   position: absolute;
   border-radius: 50%;
-  border: 1px solid rgba(210, 100, 20, 0.40);
+  border: 1px solid rgba(115, 84, 133, 0.34);
   width: 0;
   height: 0;
   transform: translate(-50%, -50%);

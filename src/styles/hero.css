@@ -17,12 +17,23 @@
 }
 
 .hero-eyebrow {
-  font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
   font-weight: 600;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--ink);
-  margin-bottom: 28px;
+  color: var(--brand);
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.hero-eyebrow::before {
+  content: '';
+  width: 28px;
+  height: 1px;
+  background: color-mix(in srgb, var(--brand) 56%, var(--border) 44%);
 }
 
 h1 {
@@ -37,7 +48,7 @@ h1 {
 h1 em {
   font-style: italic;
   font-weight: 300;
-  color: var(--ink);
+  color: var(--brand);
 }
 
 .hero-right {
@@ -66,12 +77,18 @@ h1 em {
   padding: 12px 28px;
   font-size: 0.88rem;
   font-weight: 600;
-  background: var(--ink);
+  background: var(--brand);
   color: #fff;
+  border-radius: 0;
   text-decoration: none;
-  transition: opacity 0.15s;
+  box-shadow: var(--shadow-sm);
+  transition: background-color 0.15s, transform 0.15s ease, box-shadow 0.15s ease;
 }
-.hero-actions .btn-primary:hover { opacity: 0.75; }
+.hero-actions .btn-primary:hover {
+  background: var(--brand-strong);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
 
 .hero-actions .btn-text {
   font-size: 0.88rem;
@@ -85,8 +102,12 @@ h1 em {
 .hero-stats {
   display: flex;
   align-items: center;
-  padding-top: 32px;
-  border-top: 1px solid var(--border);
+  gap: 20px;
+  padding: 18px 22px;
+  background: var(--surface-strong);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-glow);
 }
 
 .hero-stat {
@@ -98,7 +119,7 @@ h1 em {
   font-weight: 700;
   letter-spacing: -0.04em;
   line-height: 1;
-  color: var(--ink);
+  color: var(--brand);
   margin-bottom: 4px;
 }
 
@@ -110,8 +131,8 @@ h1 em {
 .hero-stat-divider {
   width: 1px;
   height: 36px;
-  background: var(--border);
-  margin: 0 32px;
+  background: color-mix(in srgb, var(--brand) 24%, var(--border) 76%);
+  margin: 0 12px;
   flex-shrink: 0;
 }
 
@@ -164,6 +185,10 @@ h1 em {
     font-size: 0.82rem;
     margin-bottom: 18px;
     letter-spacing: 0.16em;
+  }
+
+  .hero-eyebrow::before {
+    width: 22px;
   }
 
   .hero-body {
