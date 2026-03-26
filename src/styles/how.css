@@ -32,7 +32,7 @@
   left: 0;
   right: 0;
   height: 3px;
-  background: linear-gradient(90deg, var(--brand), transparent 70%);
+  background: linear-gradient(90deg, var(--brand-deep), transparent 70%);
 }
 
 .how-item:hover {
@@ -46,7 +46,7 @@
   font-weight: 600;
   margin-bottom: 10px;
   letter-spacing: -0.01em;
-  color: var(--ink);
+  color: var(--brand-deep);
 }
 
 .how-desc {

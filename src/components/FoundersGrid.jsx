@@ -34,11 +34,16 @@ function MemberCard({ initials, role, name, bio, linkedin, photo }) {
           photo
             ? {
                 backgroundImage: `linear-gradient(rgba(15,17,23,0.05), rgba(15,17,23,0.16)), url(${photo})`,
-                backgroundSize: name === "Aziz Diop" ? "90%" : "cover",
+                backgroundSize:
+                  name === "Aziz Diop"
+                    ? "99%"
+                    : "cover",
                 backgroundPosition:
                   name === "Yanis Ould Mahammed"
                     ? "center 35%"
-                    : "center 5%",
+                    : name === "Aziz Diop"
+                      ? "74% 16%"
+                      : "center 10%",
               }
             : undefined
         }

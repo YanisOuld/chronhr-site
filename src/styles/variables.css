@@ -11,9 +11,10 @@
   --muted: #84827D;
   --border: #DDD8EA;
   --white: #FFFFFF;
-  --brand: #735485;
-  --brand-strong: #5E4370;
-  --brand-soft: #EEE8F2;
+  --brand: #8660b8;
+  --brand-strong: #7445ad;
+  --brand-deep: #5c2f93;
+  --brand-soft: #f3eef8;
   --surface: rgba(255, 255, 255, 0.78);
   --surface-strong: rgba(255, 255, 255, 0.94);
   --shadow-sm: 0 10px 24px rgba(28, 20, 40, 0.08);

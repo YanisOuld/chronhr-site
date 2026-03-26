@@ -100,7 +100,7 @@
   font-size: 1.4rem;
   font-weight: 700;
   letter-spacing: -0.03em;
-  color: var(--brand-strong);
+  color: var(--brand-deep);
   transition: color 0.2s;
 }
 
@@ -156,7 +156,7 @@
 }
 
 .roi-page .cases-period-btn-active {
-  background: var(--brand);
+  background: var(--brand-deep);
   color: #fff;
 }
 

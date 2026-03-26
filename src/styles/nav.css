@@ -78,7 +78,7 @@
   position: absolute;
   bottom: -20px;
   height: 1px;
-  background: var(--brand);
+  background: var(--brand-deep);
   transition: left 0.25s ease, width 0.25s ease, opacity 0.2s ease;
   pointer-events: none;
 }
@@ -97,7 +97,7 @@
 
 .nav-link:hover,
 .nav-link-active {
-  color: var(--brand);
+  color: var(--brand-deep);
   transform: translateY(-1px);
 }
 
@@ -108,7 +108,7 @@
 .nav-links button.nav-link,
 .nav-links button.nav-link.nav-link-active {
   font-weight: 500;
-  color: var(--brand);
+  color: var(--brand-deep);
 }
 
 /* Chevron */
@@ -184,7 +184,7 @@
   font-size: 0.85rem;
   font-weight: 600;
   color: #fff;
-  background: var(--brand);
+  background: var(--brand-deep);
   padding: 9px 20px;
   border-radius: 0;
   text-decoration: none;
@@ -193,11 +193,11 @@
   flex-shrink: 0;
 }
 .nav-cta:hover {
-  background: var(--brand-strong);
+  background: var(--brand);
   transform: translateY(-1px);
   box-shadow: var(--shadow-md);
 }
-.nav-cta-active { background: var(--brand-strong); }
+.nav-cta-active { background: var(--brand); }
 
 @keyframes navLogoFloat {
   0%,
