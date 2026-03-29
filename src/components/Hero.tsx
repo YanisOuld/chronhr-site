@@ -38,13 +38,14 @@ function Hero() {
           {/* Stats — pinned below actions */}
           <div className="hero-stats">
             <div className="hero-stat">
-              <div className="hero-stat-num">2× faster</div>
-              <div className="hero-stat-label">Analysis</div>
+              <div className="hero-stat-kicker">Speed</div>
+              <div className="hero-stat-num">2x faster analysis</div>
+              <div className="hero-stat-label">Compared with traditional workflow</div>
             </div>
-            <div className="hero-stat-divider" />
             <div className="hero-stat">
-              <div className="hero-stat-num">Effortless</div>
-              <div className="hero-stat-label">Implementation</div>
+              <div className="hero-stat-kicker">Data control</div>
+              <div className="hero-stat-num">Keep data in-house</div>
+              <div className="hero-stat-label">Designed for strong data sovereignty</div>
             </div>
           </div>
 
