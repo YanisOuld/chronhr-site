@@ -30,7 +30,7 @@ const steps = [
     num: '05',
     title: 'Assisted report writing',
     desc: `When the analysis is complete, Chronhr drafts the STR or LCTR automatically. It pulls from the case data, annotations and findings. Analysts review, adjust and submit directly to FINTRAC. No blank page, no formatting errors.`,
-    tools: ['STR generation', 'LCTR generation', 'FINTRAC compliance check', 'One-click submission', 'Version history'],
+    tools: ['STR generation', 'LCTR generation', 'FINTRAC compliance check', 'Version history'],
   },
 ]
 
