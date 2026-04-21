@@ -1,5 +1,3 @@
-import { Link } from "react-router-dom"
-
 function CtaBand() {
   return (
     <div className="cta-band">
@@ -9,13 +7,21 @@ function CtaBand() {
           <br />
           <em>in action?</em>
         </div>
-        <Link
-          to="/get-started"
+        <a
+          href="#contact"
           className="btn-primary"
-          onClick={() => window.scrollTo(0, 0)}
+          aria-label="Book a Chronhr demo"
+          onClick={(e) => {
+            e.preventDefault()
+            const target = document.getElementById('contact')
+            if (target) {
+              const y = target.getBoundingClientRect().top + window.scrollY - 78
+              window.scrollTo({ top: y, behavior: 'smooth' })
+            }
+          }}
         >
           Book a demo
-        </Link>
+        </a>
       </div>
     </div>
   )

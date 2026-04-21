@@ -36,7 +36,12 @@ function SupportedBy() {
                   <div className="partner">
                     <div className="partner-logo" aria-hidden="true">
                       {partner.logo ? (
-                        <img src={partner.logo} alt={partner.name} className="partner-logo-image" />
+                        <img
+                          src={partner.logo}
+                          alt={partner.name === "Propolys" ? "Propolys cybersecurity incubator logo" : "Polytechnique Montréal logo"}
+                          className="partner-logo-image"
+                          loading="lazy"
+                        />
                       ) : (
                         <span className="partner-logo-text">{partner.mark}</span>
                       )}

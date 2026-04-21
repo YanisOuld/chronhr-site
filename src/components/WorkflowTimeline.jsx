@@ -80,7 +80,7 @@ export default function WorkflowTimeline() {
     <div className="workflow">
       <div className="section-label">How Chronhr works</div>
       <h2>
-        The workflow your analysts <em>actually need.</em>
+        How Chronhr <em>Investigates AML Cases</em>
       </h2>
 
       <div className="timeline" ref={timelineRef}>
@@ -120,7 +120,7 @@ export default function WorkflowTimeline() {
             </div>
 
             <article className="step-content">
-              <div className="step-title">{step.title}</div>
+              <h3 className="step-title">{step.title}</h3>
               <p className="step-desc">{step.desc}</p>
               <div className="tools" role="list" aria-label={`${step.title} capabilities`}>
                 {step.tools.map((t) => (

@@ -15,46 +15,46 @@ import CtaBand from '../components/CtaBand.tsx'
 export default function SinglePage() {
   return (
     <div className="single-page">
-      <section id="home" className="single-page-section">
+      <section id="hero" aria-label="Hero" className="single-page-section">
         <Hero />
       </section>
 
-      <section id="how" className="single-page-section">
+      <section id="how" aria-label="Overview" className="single-page-section">
         <HowItWorks />
       </section>
 
-      <section id="roles" className="single-page-section">
+      <section id="roles" aria-label="Who it's for" className="single-page-section">
         <Roles />
       </section>
 
-      <section id="tech" className="single-page-section single-page-tech">
+      <section id="tech" aria-label="How Chronhr works" className="single-page-section single-page-tech">
         <WorkflowTimeline />
       </section>
 
-      <section id="roi-calculator" className="single-page-section">
+      <section id="roi" aria-label="ROI Calculator" className="single-page-section">
         <RoiCalculatorSection />
       </section>
 
-      <section id="comparison" className="single-page-section">
+      <section id="comparison" aria-label="Benchmark" className="single-page-section">
         <ComparisonTable />
       </section>
 
-      <section id="team" className="single-page-section single-page-team">
+      <section id="team" aria-label="Team" className="single-page-section single-page-team">
         <FoundersGrid />
       </section>
 
-      <section id="partners" className="single-page-section supported single-page-supported">
+      <section id="partners" aria-label="Supported by" className="single-page-section supported single-page-supported">
         <div className="supported-inner">
           <SupportedBy />
           <AdvisoryBoard />
         </div>
       </section>
 
-      <section id="contact" className="single-page-section single-page-contact-wrap">
+      <section id="contact" aria-label="Contact" className="single-page-section single-page-contact-wrap">
         <div className="single-page-contact">
           <div className="single-page-contact-label">Contact</div>
           <h2>
-            See it on a real case. <em>In 30 minutes.</em>
+            Book an <em>AML Platform Demo</em>
           </h2>
           <p className="single-page-contact-desc">
             Tell us your current workflow. We will show you exactly where Chronhr fits — using

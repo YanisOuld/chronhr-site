@@ -1,5 +1,3 @@
-import { Link } from "react-router-dom";
-
 function Hero() {
   return (
     <div className="hero">
@@ -8,11 +6,7 @@ function Hero() {
         {/* LEFT — title */}
         <div>
           <div className="hero-eyebrow">AML Intelligence Platform</div>
-          <h1>
-            Your analysts spend 60% of their time gathering data.
-            <br />
-            Not analyzing it.
-          </h1>
+          <h1>AML Investigation Platform for Compliance Teams</h1>
         </div>
 
         {/* RIGHT — body + actions + stats */}
@@ -24,13 +18,21 @@ function Hero() {
           </p>
 
           <div className="hero-actions">
-            <Link
-              to="/get-started"
+            <a
+              href="#contact"
               className="btn-primary"
-              onClick={() => window.scrollTo(0, 0)}
+              aria-label="Book a Chronhr demo"
+              onClick={(e) => {
+                e.preventDefault()
+                const target = document.getElementById('contact')
+                if (target) {
+                  const y = target.getBoundingClientRect().top + window.scrollY - 78
+                  window.scrollTo({ top: y, behavior: 'smooth' })
+                }
+              }}
             >
               Book a demo
-            </Link>
+            </a>
           </div>
 
           {/* Stats — pinned below actions */}

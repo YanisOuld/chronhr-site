@@ -10,22 +10,22 @@ import ScrollToTop from './components/ScrollToTop'
 
 const SEO_BY_PATH = {
   '/': {
-    title: 'Chronhr - AML & Anti-Fraud Intelligence Platform',
+    title: 'Chronhr | AML Investigation Platform for Compliance Teams',
     description:
-      'Chronhr helps AML and compliance teams investigate cases faster, detect anomalies, and draft reports with AI assistance.',
-    canonical: 'https://chronhr.com/',
+      'Chronhr helps AML analysts close cases 2× faster — automated data ingestion, AI-assisted investigation, and regulator-ready STR/LCTR reports. Trusted by compliance teams. Book a demo.',
+    canonical: 'https://www.chronhr.com/',
   },
   '/get-started': {
     title: 'Get Started | Chronhr',
     description:
       'Request a tailored Chronhr demo and see how your team can accelerate AML investigations and reporting workflows.',
-    canonical: 'https://chronhr.com/get-started',
+    canonical: 'https://www.chronhr.com/get-started',
   },
   '/roi': {
     title: 'ROI Calculator | Chronhr',
     description:
       'Estimate analyst hours and cost savings with Chronhr using our AML workflow ROI calculator.',
-    canonical: 'https://chronhr.com/roi',
+    canonical: 'https://www.chronhr.com/roi',
   },
 }
 

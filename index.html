@@ -2,83 +2,153 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="preload"
+      href="https://fonts.gstatic.com/s/syne/v22/8vIH7w4qzmVxm2BL9A.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="https://fonts.gstatic.com/s/dmmono/v14/aFTU7PB1QTsUX8KYthSQBLyM.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png?v=20260324" />
     <link rel="icon" type="image/png" sizes="192x192" href="/favicon.png?v=20260324" />
     <link rel="shortcut icon" href="/favicon.png?v=20260324" />
     <link rel="apple-touch-icon" href="/favicon.png?v=20260324" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#7d5f9a" />
-    <title>Chronhr – AML & Anti-Fraud Intelligence Platform</title>
+    <title>Chronhr | AML Investigation Platform for Compliance Teams</title>
 
-    <!-- SEO Meta -->
-    <meta name="description" content="Chronhr is an AML and anti-fraud intelligence platform that helps compliance teams investigate cases faster, detect anomalies, and draft STR/LCTR reports with AI assistance." />
+    <meta
+      name="description"
+      content="Chronhr helps AML analysts close cases 2× faster — automated data ingestion, AI-assisted investigation, and regulator-ready STR/LCTR reports. Trusted by compliance teams. Book a demo."
+    />
+    <meta
+      name="keywords"
+      content="AML investigation platform, AML case management software, STR filing software, LCTR automation, AML compliance software, FINTRAC reporting, AML analyst tools, suspicious transaction report automation"
+    />
     <meta name="robots" content="index, follow" />
-    <meta name="author" content="Chronhr" />
-    <link rel="canonical" href="https://chronhr.com/" />
+    <meta name="author" content="Chronhr Inc." />
+    <link rel="canonical" href="https://www.chronhr.com/" />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.chronhr.com/" />
+    <meta
+      property="og:title"
+      content="Chronhr | AML Investigation Platform for Compliance Teams"
+    />
+    <meta
+      property="og:description"
+      content="Chronhr helps AML analysts close cases 2× faster — automated data ingestion, AI-assisted investigation, and regulator-ready STR/LCTR reports."
+    />
+    <meta property="og:image" content="https://www.chronhr.com/og-image.png" />
     <meta property="og:site_name" content="Chronhr" />
-    <meta property="og:title" content="Chronhr – AML & Anti-Fraud Intelligence Platform" />
-    <meta property="og:description" content="Detect anomalies, centralize investigations, and accelerate AML reporting with Chronhr." />
-    <meta property="og:url" content="https://chronhr.com/" />
-    <meta property="og:image" content="https://chronhr.com/og-image.jpg" />
-    <meta property="og:image:alt" content="Chronhr AML investigation workspace" />
     <meta property="og:locale" content="en_US" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Chronhr – AML & Anti-Fraud Intelligence Platform" />
-    <meta name="twitter:description" content="Detect anomalies, centralize investigations, and accelerate AML reporting with Chronhr." />
-    <meta name="twitter:image" content="https://chronhr.com/og-image.jpg" />
+    <meta name="twitter:title" content="Chronhr | AML Investigation Platform" />
+    <meta
+      name="twitter:description"
+      content="Close AML cases 2× faster. Automated ingestion, AI investigation, regulator-ready reports."
+    />
+    <meta name="twitter:image" content="https://www.chronhr.com/og-image.png" />
 
-    <!-- Schema.org -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
-      "name": "Chronhr",
-      "url": "https://chronhr.com",
-      "applicationCategory": "BusinessApplication",
-      "description": "AI-powered anti-fraud and AML SaaS platform for real-time fraud detection and prevention.",
-      "operatingSystem": "Web",
-      "offers": {
-        "@type": "Offer",
-        "priceCurrency": "USD",
-        "availability": "https://schema.org/OnlineOnly"
-      },
-      "provider": {
-        "@type": "Organization",
-        "name": "Chronhr",
-        "url": "https://chronhr.com"
+    <script type="application/ld+json" defer>
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "SoftwareApplication",
+            "name": "Chronhr",
+            "url": "https://www.chronhr.com",
+            "description": "AML investigation platform that helps compliance teams ingest data, analyze cases and generate regulator-ready STR and LCTR reports — 2× faster than traditional workflows.",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Web",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "availability": "https://schema.org/InStock"
+            },
+            "featureList": [
+              "Automated data ingestion from AML systems",
+              "AI-assisted case investigation",
+              "STR and LCTR report generation",
+              "FINTRAC compliance",
+              "Multi-jurisdiction support",
+              "Full audit trail"
+            ],
+            "screenshot": "https://www.chronhr.com/og-image.png"
+          },
+          {
+            "@type": "Organization",
+            "name": "Chronhr Inc.",
+            "url": "https://www.chronhr.com",
+            "logo": "https://www.chronhr.com/logo.png",
+            "foundingLocation": "Montréal, Québec, Canada",
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "email": "contact@chronhr.com",
+              "contactType": "sales"
+            },
+            "sameAs": ["https://www.linkedin.com/company/chronhr"]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What is Chronhr?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Chronhr is an AML investigation platform that helps compliance teams ingest case data, analyze suspicious activity and generate regulator-ready STR and LCTR reports — 2× faster than traditional workflows."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Does Chronhr support FINTRAC reporting?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. Chronhr generates STR and LCTR reports that meet FINTRAC requirements, with standardized templates, auto-filled fields and full audit trail."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How long does it take to deploy Chronhr?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Most teams are fully operational within 2 to 4 weeks. Chronhr can onboard via CSV from day one — no core system integration required upfront."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What AML systems does Chronhr integrate with?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Chronhr connects to LexisNexis, Actimize, Snowflake, and any source via SQL connectors, REST APIs or CSV ingestion."
+                }
+              }
+            ]
+          }
+        ]
       }
-    }
     </script>
-
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Chronhr",
-      "url": "https://chronhr.com",
-      "logo": "https://chronhr.com/chronhr-logo.png",
-      "description": "AML and anti-fraud intelligence platform for compliance teams.",
-      "sameAs": [
-        "https://www.linkedin.com/company/chronhr"
-      ]
-    }
-    </script>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
     <link
-      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Syne:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <script type="module" src="/src/main.tsx" defer></script>
   </body>
 </html>

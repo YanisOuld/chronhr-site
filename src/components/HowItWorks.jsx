@@ -3,11 +3,11 @@ function HowItWorks() {
     <div className="how" id="how">
       <div className="section-label">Overview</div>
       <h2>
-        Three steps. <em>One platform.</em>
+        Three Steps. <em>One AML Platform.</em>
       </h2>
       <div className="how-grid">
         <div className="how-item">
-          <div className="how-title">Data Ingestion</div>
+          <h3 className="how-title">Data Ingestion</h3>
           <div className="how-desc">
             <div className="how-tags" aria-label="Connected systems">
               <span className="how-tag">KYC</span>
@@ -24,7 +24,7 @@ function HowItWorks() {
           </div>
         </div>
         <div className="how-item">
-          <div className="how-title">Analysis</div>
+          <h3 className="how-title">AI-Assisted Analysis</h3>
           <div className="how-desc">
             <div className="how-tags" aria-label="Analysis highlights">
               <span className="how-tag">Relational graph</span>
@@ -39,7 +39,7 @@ function HowItWorks() {
           </div>
         </div>
         <div className="how-item">
-          <div className="how-title">Report Writing</div>
+          <h3 className="how-title">Regulator-Ready Report Writing</h3>
           <div className="how-desc">
             <div className="how-tags" aria-label="Report writing highlights">
               <span className="how-tag">AI drafting assistant</span>
@@ -66,26 +66,26 @@ function HowItWorks() {
         <div className="how-signal-group">
           <div className="how-signal-group-title">Escalation signals (red flags)</div>
           <div className="how-signal-row" aria-label="High-risk signals">
-            <span className="how-signal how-signal-risk">⚠ Structuring</span>
-            <span className="how-signal how-signal-risk">⚠ Layering</span>
-            <span className="how-signal how-signal-risk">⚠ PEP exposed</span>
-            <span className="how-signal how-signal-risk">⚠ Sanctions hit</span>
-            <span className="how-signal how-signal-risk">⚠ KYC mismatch</span>
-            <span className="how-signal how-signal-risk">⚠ High velocity</span>
-            <span className="how-signal how-signal-risk">⚠ Negative media</span>
+            <span className="how-signal how-signal-risk"><span className="how-signal-icon" aria-hidden="true">!</span>Structuring</span>
+            <span className="how-signal how-signal-risk"><span className="how-signal-icon" aria-hidden="true">!</span>Layering</span>
+            <span className="how-signal how-signal-risk"><span className="how-signal-icon" aria-hidden="true">!</span>PEP exposed</span>
+            <span className="how-signal how-signal-risk"><span className="how-signal-icon" aria-hidden="true">!</span>Sanctions hit</span>
+            <span className="how-signal how-signal-risk"><span className="how-signal-icon" aria-hidden="true">!</span>KYC mismatch</span>
+            <span className="how-signal how-signal-risk"><span className="how-signal-icon" aria-hidden="true">!</span>High velocity</span>
+            <span className="how-signal how-signal-risk"><span className="how-signal-icon" aria-hidden="true">!</span>Negative media</span>
           </div>
         </div>
 
         <div className="how-signal-group">
           <div className="how-signal-group-title">Clearance signals (confidence checks)</div>
           <div className="how-signal-row" aria-label="Low-risk signals">
-            <span className="how-signal how-signal-safe">✓ Verified KYC</span>
-            <span className="how-signal how-signal-safe">✓ Clear sanctions</span>
-            <span className="how-signal how-signal-safe">✓ Documented SOF</span>
-            <span className="how-signal how-signal-safe">✓ Valid business</span>
-            <span className="how-signal how-signal-safe">✓ Real address</span>
-            <span className="how-signal how-signal-safe">✓ Stable pattern</span>
-            <span className="how-signal how-signal-safe">✓ Known vendor</span>
+            <span className="how-signal how-signal-safe"><span className="how-signal-icon" aria-hidden="true">✓</span>Verified KYC</span>
+            <span className="how-signal how-signal-safe"><span className="how-signal-icon" aria-hidden="true">✓</span>Clear sanctions</span>
+            <span className="how-signal how-signal-safe"><span className="how-signal-icon" aria-hidden="true">✓</span>Documented SOF</span>
+            <span className="how-signal how-signal-safe"><span className="how-signal-icon" aria-hidden="true">✓</span>Valid business</span>
+            <span className="how-signal how-signal-safe"><span className="how-signal-icon" aria-hidden="true">✓</span>Real address</span>
+            <span className="how-signal how-signal-safe"><span className="how-signal-icon" aria-hidden="true">✓</span>Stable pattern</span>
+            <span className="how-signal how-signal-safe"><span className="how-signal-icon" aria-hidden="true">✓</span>Known vendor</span>
           </div>
         </div>
       </div>

@@ -21,40 +21,41 @@ const founders = [
 
 function MemberCard({ initials, role, name, bio, linkedin, photo }) {
   const [hovered, setHovered] = useState(false);
+  const photoAlt =
+    name === "Aziz Diop"
+      ? "Aziz Diop, CEO of Chronhr"
+      : "Yanis Ould Mahammed, CTO of Chronhr";
 
   return (
-    <div
+    <article
       className="founder-card"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
-      <div
-        className={`founder-media ${hovered ? "founder-media-hovered" : ""}`}
-        style={
-          photo
-            ? {
-                backgroundImage: `linear-gradient(rgba(15,17,23,0.05), rgba(15,17,23,0.16)), url(${photo})`,
-                backgroundSize:
-                  name === "Aziz Diop"
-                    ? "99%"
-                    : "cover",
-                backgroundPosition:
-                  name === "Yanis Ould Mahammed"
-                    ? "center 35%"
-                    : name === "Aziz Diop"
-                      ? "74% 16%"
-                      : "center 10%",
-              }
-            : undefined
-        }
-      >
+      <div className={`founder-media ${hovered ? "founder-media-hovered" : ""}`}>
+        {photo ? (
+          <img
+            src={photo}
+            alt={photoAlt}
+            className="founder-photo-image"
+            loading="lazy"
+            style={{
+              objectPosition:
+                name === "Yanis Ould Mahammed"
+                  ? "center 35%"
+                  : name === "Aziz Diop"
+                    ? "74% 16%"
+                    : "center 10%",
+            }}
+          />
+        ) : null}
         {!photo && <span className="founder-initials">{initials}</span>}
         <div className="founder-photo-line" />
       </div>
 
       <div className="founder-role">{role}</div>
 
-      <div className="founder-name">{name}</div>
+      <h3 className="founder-name">{name}</h3>
 
       <div className="founder-bio">{bio}</div>
 
@@ -67,16 +68,14 @@ function MemberCard({ initials, role, name, bio, linkedin, photo }) {
           LinkedIn →
         </a>
       </div>
-    </div>
+    </article>
   );
 }
 
 export default function FoundersGrid() {
   return (
     <div className="founders-grid-wrap">
-      <div className="founders-label">
-        Founders
-      </div>
+      <h2 className="founders-label">The Team Behind Chronhr</h2>
 
       <div className="founders-grid">
         {founders.map((f, i) => (

@@ -1,5 +1,4 @@
 import { useEffect, useMemo, useState } from 'react'
-import { Link } from 'react-router-dom'
 
 function useCountUp(target, duration = 300) {
   const [value, setValue] = useState(target)
@@ -95,7 +94,7 @@ function RoiCalculatorSection() {
   const roundedHoursSaved = roundTo(values.hoursSavedPerYear, 10)
 
   return (
-    <section className="roi-calc" id="roi">
+    <section className="roi-calc">
       <div className="roi-calc-head">
         <div className="section-label">ROI Calculator</div>
         <div className="roi-badge" aria-label="ROI badge">
@@ -106,7 +105,7 @@ function RoiCalculatorSection() {
       </div>
 
       <h2>
-        AML compliance costs <em>more than you think.</em>
+        AML Compliance <em>ROI Calculator</em>
       </h2>
       <p className="roi-calc-subtitle">
         Adjust the inputs below to see exactly what your current workflow is costing you — and
@@ -281,9 +280,21 @@ function RoiCalculatorSection() {
       </p>
 
       <div className="roi-cta-group">
-        <Link to="/get-started" className="roi-cta-primary" onClick={() => window.scrollTo(0, 0)}>
+        <a
+          href="#contact"
+          className="roi-cta-primary"
+          aria-label="Book a Chronhr demo"
+          onClick={(e) => {
+            e.preventDefault()
+            const target = document.getElementById('contact')
+            if (target) {
+              const y = target.getBoundingClientRect().top + window.scrollY - 78
+              window.scrollTo({ top: y, behavior: 'smooth' })
+            }
+          }}
+        >
           See it on a real case — book a 30 min demo
-        </Link>
+        </a>
       </div>
     </section>
   )

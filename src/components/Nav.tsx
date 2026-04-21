@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import type { MouseEvent } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const brandLogo = "/transparent_logo.png";
 
@@ -92,15 +92,20 @@ function Nav() {
   }
 
   return (
-    <nav className="nav">
+    <nav className="nav" aria-label="Main navigation">
       <div className="nav-inner">
         <button
           type="button"
           className="nav-logo"
           aria-label="Chronhr home"
-          onClick={() => goToSection("home")}
+          onClick={() => goToSection("hero")}
         >
-          <img src={brandLogo} alt="Chronhr" className="nav-logo-image" />
+          <img
+            src={brandLogo}
+            alt="Chronhr AML investigation platform logo"
+            className="nav-logo-image"
+            fetchpriority="high"
+          />
           <span className="nav-logo-text">CHRONHR</span>
         </button>
 
@@ -116,25 +121,33 @@ function Nav() {
 
           {links.map((link) => (
             <li key={link.id} style={{ position: "relative" }}>
-              <button
-                type="button"
+              <a
+                href={`#${link.id}`}
                 className={`nav-link ${activeSection === link.id ? "nav-link-active" : ""}`}
-                onClick={() => goToSection(link.id)}
+                onClick={(e) => {
+                  e.preventDefault();
+                  goToSection(link.id);
+                }}
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
               >
                 {link.label}
-              </button>
+              </a>
             </li>
           ))}
         </ul>
 
-        <Link
-          to="/get-started"
+        <a
+          href="#contact"
           className="nav-cta"
+          aria-label="Book a Chronhr demo"
+          onClick={(e) => {
+            e.preventDefault();
+            goToSection("contact");
+          }}
         >
           Book a demo
-        </Link>
+        </a>
       </div>
     </nav>
   );

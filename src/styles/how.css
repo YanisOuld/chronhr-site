@@ -156,6 +156,7 @@
 .how-signal {
   display: inline-flex;
   align-items: center;
+  gap: 6px;
   padding: 4px 10px;
   font-size: 0.72rem;
   font-weight: 700;
@@ -168,16 +169,38 @@
   transform: translateY(-1px);
 }
 
+.how-signal-icon {
+  width: 14px;
+  height: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 0.6rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
 .how-signal-risk {
   color: #9f1f1f;
   background: #fdecec;
   border: 1px solid #f4c7c7;
 }
 
+.how-signal-risk .how-signal-icon {
+  background: #f8d2d2;
+  color: #8f1616;
+}
+
 .how-signal-safe {
   color: #1f6b3a;
   background: #edf8f1;
   border: 1px solid #c8e8d3;
+}
+
+.how-signal-safe .how-signal-icon {
+  background: #d8efdf;
+  color: #1f6b3a;
 }
 
 @keyframes card-scan {
