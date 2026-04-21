@@ -31,7 +31,7 @@ function Hero() {
               className="btn-primary"
               onClick={() => window.scrollTo(0, 0)}
             >
-              Get started
+              Book a demo
             </Link>
           </div>
 
@@ -46,6 +46,16 @@ function Hero() {
               <div className="hero-stat-kicker">Data control</div>
               <div className="hero-stat-num">Keep data in-house</div>
               <div className="hero-stat-label">Designed for strong data sovereignty</div>
+            </div>
+            <div className="hero-stat">
+              <div className="hero-stat-kicker">Cost efficiency</div>
+              <div className="hero-stat-num">Save 30–40% on compliance costs</div>
+              <div className="hero-stat-label">By streamlining end-to-end AML workflows</div>
+            </div>
+            <div className="hero-stat">
+              <div className="hero-stat-kicker">Audit readiness</div>
+              <div className="hero-stat-num">Generate regulator-ready reports in minutes</div>
+              <div className="hero-stat-label">With full traceability across every case</div>
             </div>
           </div>
 

@@ -15,6 +15,44 @@
   pointer-events: none !important;
 }
 
+.bg-grid {
+  position: absolute;
+  inset: -12%;
+  background:
+    linear-gradient(to right, rgba(115, 84, 133, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(115, 84, 133, 0.05) 1px, transparent 1px);
+  background-size: 44px 44px;
+  mask-image: radial-gradient(circle at 50% 40%, rgba(0, 0, 0, 0.82), transparent 74%);
+  transform-origin: center;
+  animation: grid-drift 34s linear infinite;
+  opacity: 0.55;
+}
+
+.bg-glow {
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(28px);
+  opacity: 0.22;
+}
+
+.bg-glow-1 {
+  width: 420px;
+  height: 60px;
+  top: 14%;
+  left: 8%;
+  background: linear-gradient(90deg, transparent, rgba(115, 84, 133, 0.42), transparent);
+  animation: glow-sweep 16s ease-in-out infinite;
+}
+
+.bg-glow-2 {
+  width: 360px;
+  height: 52px;
+  top: 62%;
+  right: 6%;
+  background: linear-gradient(90deg, transparent, rgba(94, 67, 112, 0.45), transparent);
+  animation: glow-sweep 19s ease-in-out infinite reverse;
+}
+
 /* ─── ORBS ─────────────────────────────────────────────────── */
 .orb {
   position: absolute;
@@ -83,6 +121,33 @@
   100% { width: 560px; height: 560px; opacity: 0;    }
 }
 
+@keyframes grid-drift {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+    background-position: 0 0, 0 0;
+  }
+  50% {
+    transform: translate3d(0, -8px, 0) scale(1.02);
+    background-position: 20px 14px, -14px 20px;
+  }
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+    background-position: 40px 28px, -28px 40px;
+  }
+}
+
+@keyframes glow-sweep {
+  0%,
+  100% {
+    transform: translateX(0) scaleX(1);
+    opacity: 0.16;
+  }
+  50% {
+    transform: translateX(24px) scaleX(1.08);
+    opacity: 0.34;
+  }
+}
+
 /* ─── RESPONSIVE ────────────────────────────────────────────── */
 @media (max-width: 1024px) {
   .ripple {
@@ -91,6 +156,16 @@
 }
 
 @media (max-width: 640px) {
+  .bg-grid {
+    background-size: 32px 32px;
+    opacity: 0.4;
+  }
+
+  .bg-glow-1,
+  .bg-glow-2 {
+    width: 220px;
+  }
+
   .orb-1 {
     width: 480px;
     height: 480px;
@@ -107,5 +182,14 @@
   }
   .ripple {
     opacity: 0.45;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bg-grid,
+  .bg-glow,
+  .orb,
+  .ripple {
+    animation: none !important;
   }
 }

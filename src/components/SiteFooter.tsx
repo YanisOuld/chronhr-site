@@ -23,6 +23,16 @@ function SiteFooter() {
           </div>
 
           <div>
+            <div className="footer-col-title">Company</div>
+            <ul className="footer-links">
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Security</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="mailto:contact@chronhr.com">Contact us</a></li>
+            </ul>
+          </div>
+
+          <div>
             <div className="footer-col-title">Contact</div>
             <ul className="footer-links">
               <li><a href="https://www.linkedin.com/company/chronhr/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>

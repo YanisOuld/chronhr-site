@@ -132,7 +132,7 @@ function Nav() {
           to="/get-started"
           className="nav-cta"
         >
-          Get started
+          Book a demo
         </Link>
       </div>
     </nav>

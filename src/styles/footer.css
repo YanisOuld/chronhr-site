@@ -11,7 +11,7 @@ footer {
 
 .footer-top {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
   gap: 28px;
   align-items: start;
   padding-bottom: 18px;

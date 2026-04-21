@@ -3,6 +3,7 @@ import AboutHeader from '../components/AboutHeader'
 import HowItWorks from '../components/HowItWorks'
 import Roles from '../components/Roles'
 import WhyDifferent from '../components/WhyDifferent'
+import ComparisonTable from '../components/ComparisonTable'
 import WorkflowTimeline from '../components/WorkflowTimeline'
 import FoundersGrid from '../components/FoundersGrid'
 import SupportedBy from '../components/SupportedBy'
@@ -19,6 +20,10 @@ export default function SinglePage() {
 
       <section id="how" className="single-page-section">
         <HowItWorks />
+      </section>
+
+      <section id="comparison" className="single-page-section">
+        <ComparisonTable />
       </section>
 
       <section id="roles" className="single-page-section">

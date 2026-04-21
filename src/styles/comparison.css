@@ -1,0 +1,110 @@
+/* COMPARISON TABLE */
+.comparison {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 56px 52px;
+}
+
+.comparison-subtitle {
+  max-width: 760px;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--ink);
+  margin-bottom: 20px;
+}
+
+.comparison-table-wrap {
+  border: 1px solid var(--border);
+  background: var(--surface-strong);
+  box-shadow: var(--shadow-glow);
+  overflow-x: auto;
+}
+
+.comparison-table {
+  width: 100%;
+  min-width: 1100px;
+  border-collapse: collapse;
+  font-size: 0.8rem;
+}
+
+.comparison-table th,
+.comparison-table td {
+  border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+  padding: 12px 12px;
+  line-height: 1.45;
+}
+
+.comparison-table th:last-child,
+.comparison-table td:last-child {
+  border-right: none;
+}
+
+.comparison-table thead th {
+  position: sticky;
+  top: 0;
+  background: color-mix(in srgb, var(--bg) 70%, white 30%);
+  z-index: 2;
+  color: var(--brand-deep);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.comparison-head-note {
+  display: block;
+  margin-top: 5px;
+  color: var(--muted);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+.comparison-section-row td {
+  background: color-mix(in srgb, var(--brand-soft) 78%, white 22%);
+  color: var(--brand-deep);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 9px 12px;
+}
+
+.comparison-criterion {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 3px;
+}
+
+.comparison-detail {
+  font-size: 0.72rem;
+  color: var(--muted);
+}
+
+.comparison-cell {
+  color: var(--ink);
+}
+
+.comparison-cell-chronhr {
+  background: color-mix(in srgb, var(--brand-soft) 65%, white 35%);
+  font-weight: 700;
+  color: var(--brand-deep);
+}
+
+@media (max-width: 900px) {
+  .comparison {
+    padding: 46px 24px;
+  }
+}
+
+@media (max-width: 640px) {
+  .comparison {
+    padding: 36px 18px;
+  }
+
+  .comparison-subtitle {
+    font-size: 0.88rem;
+  }
+}
