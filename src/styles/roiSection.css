@@ -1,0 +1,361 @@
+/* ROI CALCULATOR SECTION */
+.roi-calc {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 46px 52px;
+  border-top: 1px solid var(--border);
+  color: var(--ink);
+  background: transparent;
+}
+
+.roi-calc .section-label,
+.roi-calc h2 {
+  font-family: 'Syne', 'IBM Plex Sans', sans-serif;
+}
+
+.roi-calc-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 8px;
+}
+
+.roi-calc .section-label {
+  color: var(--brand);
+}
+
+.roi-calc h2 {
+  color: var(--ink);
+  margin-bottom: 10px;
+}
+
+.roi-calc h2 em {
+  color: var(--brand-deep);
+  font-style: italic;
+}
+
+.roi-calc-subtitle {
+  max-width: 760px;
+  color: var(--ink);
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.roi-badge {
+  border: 1px solid color-mix(in srgb, var(--brand) 32%, var(--border) 68%);
+  background: color-mix(in srgb, var(--brand-soft) 72%, white 28%);
+  padding: 10px 12px;
+  min-width: 186px;
+}
+
+.roi-badge-label {
+  display: block;
+  color: var(--brand);
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+  font-family: 'DM Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+.roi-badge-value {
+  display: block;
+  color: var(--brand-deep);
+  font-size: 1.5rem;
+  line-height: 1;
+  margin-bottom: 3px;
+  font-family: 'DM Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+.roi-badge-subtext {
+  color: var(--muted);
+  font-size: 0.68rem;
+  line-height: 1.35;
+}
+
+.roi-calc-grid {
+  display: grid;
+  grid-template-columns: 1.02fr 1fr;
+  gap: 14px;
+}
+
+.roi-inputs,
+.roi-results {
+  border: 1px solid var(--border);
+  background: var(--surface-strong);
+  box-shadow: var(--shadow-sm);
+  padding: 14px;
+}
+
+.roi-input-item {
+  display: block;
+}
+
+.roi-input-item + .roi-input-item {
+  margin-top: 14px;
+}
+
+.roi-input-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 7px;
+}
+
+.roi-input-label {
+  font-size: 0.84rem;
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.roi-tip {
+  margin-left: 6px;
+  color: var(--brand);
+  cursor: help;
+}
+
+.roi-number {
+  width: 84px;
+  border: 1px solid color-mix(in srgb, var(--brand) 24%, var(--border) 76%);
+  background: var(--bg);
+  color: var(--ink);
+  font-size: 0.84rem;
+  padding: 6px 8px;
+  font-family: 'DM Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+.roi-inputs input[type='range'] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(
+    to right,
+    var(--brand-strong) 0%,
+    var(--brand-strong) var(--fill),
+    color-mix(in srgb, var(--border) 84%, white 16%) var(--fill),
+    color-mix(in srgb, var(--border) 84%, white 16%) 100%
+  );
+  border-radius: 999px;
+}
+
+.roi-inputs input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--brand-strong);
+  border: 2px solid var(--bg);
+}
+
+.roi-inputs input[type='range']::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--brand-strong);
+  border: 2px solid var(--bg);
+}
+
+.roi-helper {
+  display: block;
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 0.72rem;
+}
+
+.roi-results {
+  display: grid;
+  gap: 10px;
+}
+
+.roi-card {
+  border: 1px solid var(--border);
+  background: var(--surface);
+  padding: 10px;
+}
+
+.roi-card-primary {
+  border-color: color-mix(in srgb, var(--brand) 32%, var(--border) 68%);
+  background: color-mix(in srgb, var(--brand-soft) 64%, white 36%);
+}
+
+.roi-card-label {
+  color: var(--muted);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 4px;
+}
+
+.roi-card-value {
+  color: var(--ink);
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  font-family: 'DM Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+.roi-card-primary .roi-card-value {
+  font-size: 2rem;
+  color: var(--brand-deep);
+}
+
+.roi-card-sub {
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 0.72rem;
+  line-height: 1.4;
+}
+
+.roi-cards-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.roi-insight {
+  margin-top: 14px;
+  color: var(--ink);
+  line-height: 1.65;
+  font-size: 0.88rem;
+}
+
+.roi-footnote {
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 0.72rem;
+  line-height: 1.55;
+}
+
+.roi-cta-group {
+  margin-top: 14px;
+}
+
+.roi-cta-primary {
+  display: block;
+  width: 100%;
+  text-align: center;
+  text-decoration: none;
+  background: var(--brand-strong);
+  color: #fff;
+  font-weight: 700;
+  padding: 12px 14px;
+}
+
+.roi-cta-primary:hover {
+  background: var(--brand-deep);
+}
+
+.roi-cta-secondary {
+  margin-top: 10px;
+  border: none;
+  background: transparent;
+  color: var(--muted);
+  font-size: 0.84rem;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.roi-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 17, 23, 0.52);
+  display: grid;
+  place-items: center;
+  z-index: 999;
+  padding: 16px;
+}
+
+.roi-modal {
+  width: min(420px, 100%);
+  border: 1px solid var(--border);
+  background: var(--surface-strong);
+  padding: 14px;
+  position: relative;
+}
+
+.roi-modal-close {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  border: none;
+  background: transparent;
+  color: var(--muted);
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.roi-modal-label {
+  display: block;
+  font-size: 0.82rem;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+
+.roi-modal-input {
+  width: 100%;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--ink);
+  padding: 9px 10px;
+  margin-bottom: 10px;
+}
+
+.roi-modal-submit {
+  border: none;
+  background: var(--brand-strong);
+  color: #fff;
+  font-weight: 700;
+  padding: 10px 12px;
+  cursor: pointer;
+}
+
+.roi-modal-submit:hover {
+  background: var(--brand-deep);
+}
+
+.roi-modal-success {
+  color: var(--brand-deep);
+  font-size: 0.92rem;
+  padding-top: 12px;
+}
+
+@media (max-width: 900px) {
+  .roi-calc {
+    padding: 40px 24px;
+  }
+
+  .roi-calc-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .roi-cards-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .roi-calc {
+    padding: 34px 18px;
+  }
+
+  .roi-calc-head {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .roi-badge {
+    width: 100%;
+  }
+
+  .roi-card-value {
+    font-size: 1.35rem;
+  }
+
+  .roi-card-primary .roi-card-value {
+    font-size: 1.7rem;
+  }
+}

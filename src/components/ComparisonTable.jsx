@@ -1,9 +1,23 @@
 import { Fragment } from 'react'
 
 function ComparisonTable() {
+  const providers = [
+    {
+      key: 'chronhr',
+      name: 'Chronhr',
+      note: '✦ Analyst-first · End-to-end',
+      isPrimary: true,
+    },
+    { key: 'roe', name: 'Roe AI', note: 'Investigation platform' },
+    { key: 'unit21', name: 'Unit21', note: 'AI risk infrastructure' },
+    { key: 'flagright', name: 'Flagright', note: 'TM + narrative AI' },
+    { key: 'lucinity', name: 'Lucinity', note: 'Case management AI' },
+    { key: 'hawk', name: 'Hawk AI', note: 'AML overlay platform' },
+  ]
+
   const sections = [
     {
-      title: 'Agentic Architecture',
+      title: 'Investigation Workflow',
       rows: [
         {
           criterion: 'Active data ingestion',
@@ -26,14 +40,14 @@ function ComparisonTable() {
           hawk: '◐ Overlay — not standalone',
         },
         {
-          criterion: 'No-code rule builder',
-          detail: 'Custom detection logic without engineers',
-          chronhr: '✓ Drag-and-drop + sandbox testing',
-          roe: '✕ Fixed rule sets',
-          unit21: '✓ Configurable thresholds',
-          flagright: '✓ Advanced no-code TM',
-          lucinity: '◐ Limited rule config',
-          hawk: '✓ Low-code policy upload',
+          criterion: 'Analyst-native workspace',
+          detail: 'Investigation tools generated automatically — no configuration, no data team required',
+          chronhr: '✓ Case-specific tools generated on open — graph, timeline, cash flow, ready instantly',
+          roe: '◐ Investigation UI exists but requires manual tool selection',
+          unit21: '✕ Built for data and risk ops teams, not frontline analysts',
+          flagright: '✕ TM-focused — no analyst investigation workspace',
+          lucinity: '◐ Case manager UI exists but tools are not auto-generated per case',
+          hawk: '✕ Overlay platform — no native investigation workspace',
         },
       ],
     },
@@ -141,8 +155,9 @@ function ComparisonTable() {
         Why teams choose <em>Chronhr</em>
       </h2>
       <p className="comparison-subtitle">
-        A new generation of agentic AML — built for compliance teams that need to move faster,
-        investigate deeper, and file with confidence. Anywhere in the world.
+        Most platforms were built for data engineers. Chronhr was built for the analyst sitting in
+        front of a case at 9am, with 40 alerts in the queue and a filing deadline this week. Here
+        is how we compare.
       </p>
 
       <div className="comparison-table-wrap" role="region" aria-label="Chronhr comparison table">
@@ -150,30 +165,12 @@ function ComparisonTable() {
           <thead>
             <tr>
               <th>Criterion</th>
-              <th>
-                Chronhr
-                <span className="comparison-head-note">✦ Agentic · End-to-end</span>
-              </th>
-              <th>
-                Roe AI
-                <span className="comparison-head-note">Investigation platform</span>
-              </th>
-              <th>
-                Unit21
-                <span className="comparison-head-note">AI risk infrastructure</span>
-              </th>
-              <th>
-                Flagright
-                <span className="comparison-head-note">TM + narrative AI</span>
-              </th>
-              <th>
-                Lucinity
-                <span className="comparison-head-note">Case management AI</span>
-              </th>
-              <th>
-                Hawk AI
-                <span className="comparison-head-note">AML overlay platform</span>
-              </th>
+              {providers.map((provider) => (
+                <th key={`head-${provider.key}`}>
+                  {provider.name}
+                  <span className="comparison-head-note">{provider.note}</span>
+                </th>
+              ))}
             </tr>
           </thead>
           <tbody>
@@ -188,18 +185,54 @@ function ComparisonTable() {
                       <div className="comparison-criterion">{row.criterion}</div>
                       <div className="comparison-detail">{row.detail}</div>
                     </td>
-                    <td className="comparison-cell comparison-cell-chronhr">{row.chronhr}</td>
-                    <td className="comparison-cell">{row.roe}</td>
-                    <td className="comparison-cell">{row.unit21}</td>
-                    <td className="comparison-cell">{row.flagright}</td>
-                    <td className="comparison-cell">{row.lucinity}</td>
-                    <td className="comparison-cell">{row.hawk}</td>
+                    {providers.map((provider) => (
+                      <td
+                        key={`${section.title}-${row.criterion}-${provider.key}`}
+                        className={`comparison-cell ${provider.isPrimary ? 'comparison-cell-chronhr' : ''}`}
+                      >
+                        {row[provider.key]}
+                      </td>
+                    ))}
                   </tr>
                 ))}
               </Fragment>
             ))}
           </tbody>
         </table>
+      </div>
+
+      <div className="comparison-mobile" aria-label="Chronhr comparison mobile cards">
+        {sections.map((section) => (
+          <div className="comparison-mobile-section" key={`mobile-${section.title}`}>
+            <div className="comparison-mobile-section-title">{section.title}</div>
+
+            {section.rows.map((row) => (
+              <article className="comparison-mobile-card" key={`mobile-${section.title}-${row.criterion}`}>
+                <h3 className="comparison-mobile-criterion">{row.criterion}</h3>
+                <p className="comparison-mobile-detail">{row.detail}</p>
+
+                <div className="comparison-mobile-primary">
+                  <div className="comparison-mobile-label">Chronhr</div>
+                  <div className="comparison-mobile-value">{row.chronhr}</div>
+                </div>
+
+                <details className="comparison-mobile-more">
+                  <summary>Compare with other platforms</summary>
+                  <div className="comparison-mobile-list">
+                    {providers
+                      .filter((provider) => !provider.isPrimary)
+                      .map((provider) => (
+                        <div className="comparison-mobile-item" key={`mobile-item-${section.title}-${row.criterion}-${provider.key}`}>
+                          <div className="comparison-mobile-item-name">{provider.name}</div>
+                          <div className="comparison-mobile-item-value">{row[provider.key]}</div>
+                        </div>
+                      ))}
+                  </div>
+                </details>
+              </article>
+            ))}
+          </div>
+        ))}
       </div>
     </section>
   )

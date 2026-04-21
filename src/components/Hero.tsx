@@ -9,20 +9,18 @@ function Hero() {
         <div>
           <div className="hero-eyebrow">AML Intelligence Platform</div>
           <h1>
-            Simplify analysis.
+            Your analysts spend 60% of their time gathering data.
             <br />
-            Standardize work.
-            <br />
-            <em>Move faster.</em>
+            Not analyzing it.
           </h1>
         </div>
 
         {/* RIGHT — body + actions + stats */}
         <div className="hero-right">
           <p className="hero-body">
-            Chronhr is an ELT platform built specifically for AML analysts. Bringing
-            data ingestion, analysis tools and report writing together in a single,
-            analyst‑focused workflow.
+            Chronhr gives them back that time — with a single workspace that ingests,
+            analyzes and files. From case intake to regulator-ready report, without the
+            manual work.
           </p>
 
           <div className="hero-actions">
@@ -38,24 +36,24 @@ function Hero() {
           {/* Stats — pinned below actions */}
           <div className="hero-stats">
             <div className="hero-stat">
-              <div className="hero-stat-kicker">Speed</div>
-              <div className="hero-stat-num">2x faster analysis</div>
-              <div className="hero-stat-label">Compared with traditional workflow</div>
+              <div className="hero-stat-kicker">2×</div>
+              <div className="hero-stat-num">Faster case closure</div>
+              <div className="hero-stat-label">From intake to submission — not just analysis</div>
             </div>
             <div className="hero-stat">
-              <div className="hero-stat-kicker">Data control</div>
-              <div className="hero-stat-num">Keep data in-house</div>
-              <div className="hero-stat-label">Designed for strong data sovereignty</div>
+              <div className="hero-stat-kicker">100%</div>
+              <div className="hero-stat-num">Your data stays in your region</div>
+              <div className="hero-stat-label">CA, US or EU — you choose, we enforce</div>
             </div>
             <div className="hero-stat">
-              <div className="hero-stat-kicker">Cost efficiency</div>
-              <div className="hero-stat-num">Save 30–40% on compliance costs</div>
-              <div className="hero-stat-label">By streamlining end-to-end AML workflows</div>
+              <div className="hero-stat-kicker">30–40%</div>
+              <div className="hero-stat-num">Lower compliance cost</div>
+              <div className="hero-stat-label">Without reducing headcount or coverage</div>
             </div>
             <div className="hero-stat">
-              <div className="hero-stat-kicker">Audit readiness</div>
-              <div className="hero-stat-num">Generate regulator-ready reports in minutes</div>
-              <div className="hero-stat-label">With full traceability across every case</div>
+              <div className="hero-stat-kicker">&lt; 5 min</div>
+              <div className="hero-stat-num">Regulator-ready reports</div>
+              <div className="hero-stat-label">Full traceability. Zero rework. No blank page.</div>
             </div>
           </div>
 

@@ -120,7 +120,27 @@
   font-weight: 700;
   letter-spacing: 0.01em;
   color: var(--brand-deep);
+  margin-bottom: 6px;
+}
+
+.how-signals-intro {
+  font-size: 0.78rem;
+  line-height: 1.55;
+  color: var(--ink);
   margin-bottom: 10px;
+}
+
+.how-signal-group + .how-signal-group {
+  margin-top: 10px;
+}
+
+.how-signal-group-title {
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  margin-bottom: 6px;
 }
 
 .how-signal-row {

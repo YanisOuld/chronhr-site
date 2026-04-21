@@ -9,7 +9,7 @@ function SiteFooter() {
           <div className="footer-brand">
             <div className="footer-brand-name">CHRONHR</div>
             <div className="footer-brand-desc">
-              AML intelligence platform.<br />Ingest, analyze, report.
+              The AML workspace built for analysts.<br />Not engineers.
             </div>
           </div>
 

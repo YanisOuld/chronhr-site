@@ -1,35 +1,34 @@
 import { useEffect, useRef, useState } from 'react'
-import { Link } from 'react-router-dom'
 
 const steps = [
   {
     num: '01',
     title: 'Case intake & data fetch',
-    desc: `A new case is opened. Chronhr automatically fetches all related data across your connected sources: transactions, account history, counterparties and sanctions lists all centralizes it in one workspace. No manual export, no copy-paste.`,
+    desc: `A case is opened. Chronhr immediately pulls all related data — transactions, account history, counterparties, sanctions lists — into a single workspace. No manual export. No copy-paste. The analyst arrives to a complete picture.`,
     tools: ['CSV / SWIFT ingestion', 'SQL connectors', 'REST APIs', 'Auto-normalization', 'Duplicate detection'],
   },
   {
     num: '02',
     title: 'Automatic tool generation',
-    desc: `Based on the data fetched, Chronhr generates the relevant analysis tools automatically. Each tool is tailored to the case. No configuration required. Analysts can focus on interpreting results, not building dashboards.`,
+    desc: `Based on the data loaded, Chronhr generates the right analysis tools for that specific case — relationship graph, cash flow view, transaction timeline. No configuration. No setup. The analyst interprets, not builds.`,
     tools: ['Relationship graph', 'Cash flow analysis', 'User card', 'Transaction timeline', 'Network map', 'Counterparty breakdown', 'Sanctions screening'],
   },
   {
     num: '03',
     title: 'Annotation & collaboration',
-    desc: `As the analysis progresses, analysts can annotate directly on the data, flag entities, add notes and communicate with teammates in context. Every decision is logged with a full audit trail.`,
+    desc: `Analysts annotate directly on the data, flag entities, add findings and communicate in context. Every action is timestamped and logged. The audit trail builds itself as the work happens.`,
     tools: ['Inline annotations', 'Team comments', 'Case timeline', 'Audit trail', 'Entity flagging'],
   },
   {
     num: '04',
     title: 'AI assistant',
-    desc: `A built-in chatbot lets analysts ask questions directly about the case: summarize activity, identify anomalies, compare patterns. It understands the data already loaded and responds in context.`,
+    desc: `Ask the case anything. The AI chatbot understands the loaded data and responds in context — summarize activity, identify anomalies, surface patterns. It works like a senior analyst who has already read the full file.`,
     tools: ['Case Q&A', 'Anomaly detection', 'Pattern comparison', 'Natural language queries'],
   },
   {
     num: '05',
     title: 'Assisted report writing',
-    desc: `When the analysis is complete, Chronhr drafts the STR or LCTR automatically. It pulls from the case data, annotations and findings. Analysts review, adjust and submit directly to FINTRAC. No blank page, no formatting errors.`,
+    desc: `The case is ready. Chronhr drafts the STR or LCTR automatically — pulling from the data, annotations and findings. The analyst reviews, adjusts if needed, and submits. No blank page. No formatting errors. Compliant on the first attempt.`,
     tools: ['STR generation', 'LCTR generation', 'FINTRAC compliance check', 'Version history'],
   },
 ]
@@ -81,9 +80,7 @@ export default function WorkflowTimeline() {
     <div className="workflow">
       <div className="section-label">How Chronhr works</div>
       <h2>
-        From case intake
-        <br />
-        <em>to submission.</em>
+        The workflow your analysts <em>actually need.</em>
       </h2>
 
       <div className="timeline" ref={timelineRef}>
@@ -137,14 +134,6 @@ export default function WorkflowTimeline() {
           </div>
         ))}
 
-        <div className="timeline-cta" aria-label="Timeline actions">
-          <Link to="/get-started" className="timeline-cta-btn timeline-cta-btn-primary">
-            Book a demo
-          </Link>
-          <Link to="/roi" className="timeline-cta-btn timeline-cta-btn-ghost">
-            ROI Calculator
-          </Link>
-        </div>
       </div>
     </div>
   )

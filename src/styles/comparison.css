@@ -17,12 +17,16 @@
   border: 1px solid var(--border);
   background: var(--surface-strong);
   box-shadow: var(--shadow-glow);
-  overflow-x: auto;
+  overflow-x: hidden;
+}
+
+.comparison-mobile {
+  display: none;
 }
 
 .comparison-table {
   width: 100%;
-  min-width: 1100px;
+  min-width: 0;
   border-collapse: collapse;
   font-size: 0.8rem;
 }
@@ -96,6 +100,108 @@
 @media (max-width: 900px) {
   .comparison {
     padding: 46px 24px;
+  }
+
+  .comparison-table-wrap {
+    display: none;
+  }
+
+  .comparison-mobile {
+    display: block;
+  }
+
+  .comparison-mobile-section + .comparison-mobile-section {
+    margin-top: 16px;
+  }
+
+  .comparison-mobile-section-title {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--brand-deep);
+    margin-bottom: 8px;
+  }
+
+  .comparison-mobile-card {
+    border: 1px solid var(--border);
+    background: var(--surface-strong);
+    box-shadow: var(--shadow-sm);
+    padding: 12px;
+  }
+
+  .comparison-mobile-card + .comparison-mobile-card {
+    margin-top: 10px;
+  }
+
+  .comparison-mobile-criterion {
+    font-size: 0.86rem;
+    color: var(--ink);
+    margin-bottom: 3px;
+  }
+
+  .comparison-mobile-detail {
+    font-size: 0.76rem;
+    color: var(--muted);
+    line-height: 1.5;
+    margin-bottom: 10px;
+  }
+
+  .comparison-mobile-primary {
+    border: 1px solid color-mix(in srgb, var(--brand) 28%, var(--border) 72%);
+    background: color-mix(in srgb, var(--brand-soft) 65%, white 35%);
+    padding: 8px 9px;
+    margin-bottom: 8px;
+  }
+
+  .comparison-mobile-label {
+    font-size: 0.66rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--brand-deep);
+    margin-bottom: 2px;
+  }
+
+  .comparison-mobile-value {
+    font-size: 0.78rem;
+    color: var(--ink);
+    line-height: 1.45;
+    font-weight: 600;
+  }
+
+  .comparison-mobile-more summary {
+    font-size: 0.74rem;
+    color: var(--brand-deep);
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  .comparison-mobile-list {
+    margin-top: 8px;
+    display: grid;
+    gap: 7px;
+  }
+
+  .comparison-mobile-item {
+    border: 1px solid var(--border);
+    background: var(--surface);
+    padding: 8px 9px;
+  }
+
+  .comparison-mobile-item-name {
+    font-size: 0.66rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    margin-bottom: 2px;
+    font-weight: 700;
+  }
+
+  .comparison-mobile-item-value {
+    font-size: 0.75rem;
+    color: var(--ink);
+    line-height: 1.45;
   }
 }
 

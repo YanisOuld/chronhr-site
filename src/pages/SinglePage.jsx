@@ -5,6 +5,7 @@ import Roles from '../components/Roles'
 import WhyDifferent from '../components/WhyDifferent'
 import ComparisonTable from '../components/ComparisonTable'
 import WorkflowTimeline from '../components/WorkflowTimeline'
+import RoiCalculatorSection from '../components/RoiCalculatorSection'
 import FoundersGrid from '../components/FoundersGrid'
 import SupportedBy from '../components/SupportedBy'
 import AdvisoryBoard from '../components/AdvisoryBoard'
@@ -22,16 +23,20 @@ export default function SinglePage() {
         <HowItWorks />
       </section>
 
-      <section id="comparison" className="single-page-section">
-        <ComparisonTable />
-      </section>
-
       <section id="roles" className="single-page-section">
         <Roles />
       </section>
 
       <section id="tech" className="single-page-section single-page-tech">
         <WorkflowTimeline />
+      </section>
+
+      <section id="roi-calculator" className="single-page-section">
+        <RoiCalculatorSection />
+      </section>
+
+      <section id="comparison" className="single-page-section">
+        <ComparisonTable />
       </section>
 
       <section id="team" className="single-page-section single-page-team">
@@ -49,12 +54,11 @@ export default function SinglePage() {
         <div className="single-page-contact">
           <div className="single-page-contact-label">Contact</div>
           <h2>
-            Let&apos;s discuss your workflow.
-            <br />
-            <em>Fast and practical.</em>
+            See it on a real case. <em>In 30 minutes.</em>
           </h2>
           <p className="single-page-contact-desc">
-            Tell us how your AML team works today and we will show you a tailored demo.
+            Tell us your current workflow. We will show you exactly where Chronhr fits — using
+            your case types, your sources, your reporting requirements.
           </p>
           <ContactBlock />
         </div>

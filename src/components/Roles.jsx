@@ -4,34 +4,32 @@ function Roles() {
       <div className="roles-inner">
         <div className="section-label">Who it's for</div>
         <h2>
-          Built for every role <em>in your compliance team.</em>
+          Built around the people <em>who close cases.</em>
         </h2>
         <div className="roles-grid">
           <div className="role-item">
             <div className="role-title">AML Analysts</div>
             <div className="role-desc">
-              Stop spending hours on manual data prep. Focus on what matters, the analysis itself.
+              Open a case. The data is already there. Close it faster.
             </div>
           </div>
           <div className="role-item">
             <div className="role-title">Compliance Officers</div>
             <div className="role-desc">
-              Full visibility on case progress, team throughput and regulatory deadlines, all in one
-              view.
+              Know exactly where every case stands — without chasing your analysts for updates.
             </div>
           </div>
           <div className="role-item">
             <div className="role-title">Reporting Teams</div>
             <div className="role-desc">
-              Generate STRs and LCTRs that meet every FINTRAC requirement. No rework, no
-              rejections.
+              File STRs and LCTRs that pass on the first submission. Every time.
             </div>
           </div>
           <div className="role-item">
             <div className="role-title">Risk &amp; Audit</div>
             <div className="role-desc">
-              Full audit trail on every case and decision. Export-ready for internal reviews and
-              regulatory exams.
+              Every decision, documented. Every case, exportable. Walk into any exam with
+              confidence.
             </div>
           </div>
         </div>

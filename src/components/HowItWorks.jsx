@@ -18,8 +18,9 @@ function HowItWorks() {
               <span className="how-tag">Actimize</span>
               <span className="how-tag">Snowflake</span>
             </div>
-            Connect to all required systems in one place. Structured, normalized and ready for
-            analysis. No manual prep.
+            Every source your case needs — transactions, KYC, sanctions, OSINT — pulled
+            automatically into one normalized workspace. Your analysts open a case. The data is
+            already there.
           </div>
         </div>
         <div className="how-item">
@@ -32,9 +33,9 @@ function HowItWorks() {
               <span className="how-tag">Entity resolution</span>
               <span className="how-tag">Risk scoring</span>
             </div>
-            Purpose-built tools to simplify and standardize your AML workflow, including a
-            relational graph, AI chatbot assistance, case timelines, and entity-level risk scoring.
-            Less noise, more clarity on every case.
+            Purpose-built investigation tools that surface what matters: a relational graph, AI
+            chatbot, case timeline and risk scoring — all pre-loaded with your case data. No
+            dashboard setup. No context switching. Just the analysis.
           </div>
         </div>
         <div className="how-item">
@@ -47,33 +48,45 @@ function HowItWorks() {
               <span className="how-tag">Audit trail</span>
               <span className="how-tag">Regulator-ready export</span>
             </div>
-            Assisted drafting for STRs, LCTRs and case files with standardized templates,
-            auto-filled data, and full traceability. Compliant, consistent and ready to submit.
+            Chronhr drafts the STR or LCTR from your case findings automatically. Standardized
+            templates, auto-filled fields, full audit trail. Analysts review and submit. No blank
+            page. No formatting errors. No rejections.
           </div>
         </div>
       </div>
 
       <div className="how-signals" aria-label="Detection signals">
-        <div className="how-signals-title">Signals we detect and explain</div>
+        <div className="how-signals-title">Every escalation decision is explainable.</div>
+        <p className="how-signals-intro">
+          Chronhr doesn&apos;t just flag cases — it shows its work. Every escalation and clearance is
+          backed by documented signals, so your team can defend any decision in front of a
+          regulator.
+        </p>
 
-        <div className="how-signal-row" aria-label="High-risk signals">
-          <span className="how-signal how-signal-risk">⚠ Structuring</span>
-          <span className="how-signal how-signal-risk">⚠ Layering</span>
-          <span className="how-signal how-signal-risk">⚠ PEP exposed</span>
-          <span className="how-signal how-signal-risk">⚠ Sanctions hit</span>
-          <span className="how-signal how-signal-risk">⚠ KYC mismatch</span>
-          <span className="how-signal how-signal-risk">⚠ High velocity</span>
-          <span className="how-signal how-signal-risk">⚠ Negative media</span>
+        <div className="how-signal-group">
+          <div className="how-signal-group-title">Escalation signals (red flags)</div>
+          <div className="how-signal-row" aria-label="High-risk signals">
+            <span className="how-signal how-signal-risk">⚠ Structuring</span>
+            <span className="how-signal how-signal-risk">⚠ Layering</span>
+            <span className="how-signal how-signal-risk">⚠ PEP exposed</span>
+            <span className="how-signal how-signal-risk">⚠ Sanctions hit</span>
+            <span className="how-signal how-signal-risk">⚠ KYC mismatch</span>
+            <span className="how-signal how-signal-risk">⚠ High velocity</span>
+            <span className="how-signal how-signal-risk">⚠ Negative media</span>
+          </div>
         </div>
 
-        <div className="how-signal-row" aria-label="Low-risk signals">
-          <span className="how-signal how-signal-safe">✓ Verified KYC</span>
-          <span className="how-signal how-signal-safe">✓ Clear sanctions</span>
-          <span className="how-signal how-signal-safe">✓ Documented SOF</span>
-          <span className="how-signal how-signal-safe">✓ Valid business</span>
-          <span className="how-signal how-signal-safe">✓ Real address</span>
-          <span className="how-signal how-signal-safe">✓ Stable pattern</span>
-          <span className="how-signal how-signal-safe">✓ Known vendor</span>
+        <div className="how-signal-group">
+          <div className="how-signal-group-title">Clearance signals (confidence checks)</div>
+          <div className="how-signal-row" aria-label="Low-risk signals">
+            <span className="how-signal how-signal-safe">✓ Verified KYC</span>
+            <span className="how-signal how-signal-safe">✓ Clear sanctions</span>
+            <span className="how-signal how-signal-safe">✓ Documented SOF</span>
+            <span className="how-signal how-signal-safe">✓ Valid business</span>
+            <span className="how-signal how-signal-safe">✓ Real address</span>
+            <span className="how-signal how-signal-safe">✓ Stable pattern</span>
+            <span className="how-signal how-signal-safe">✓ Known vendor</span>
+          </div>
         </div>
       </div>
     </div>

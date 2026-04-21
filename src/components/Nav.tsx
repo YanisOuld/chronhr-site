@@ -7,6 +7,7 @@ const brandLogo = "/transparent_logo.png";
 const links = [
   { label: "How", id: "how" },
   { label: "Tech", id: "tech" },
+  { label: "ROI", id: "roi" },
   { label: "Team", id: "team" },
   { label: "Contact", id: "contact" },
 ];
