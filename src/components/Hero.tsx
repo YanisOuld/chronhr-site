@@ -42,8 +42,8 @@ function Hero() {
             </div>
             <div className="hero-stat">
               <div className="hero-stat-kicker">100%</div>
-              <div className="hero-stat-num">Your data stays in your region</div>
-              <div className="hero-stat-label">CA, US or EU — you choose, we enforce</div>
+              <div className="hero-stat-num">Your data stays with you</div>
+              <div className="hero-stat-label">No data leaves your environment</div>
             </div>
             <div className="hero-stat">
               <div className="hero-stat-kicker">30–40%</div>
