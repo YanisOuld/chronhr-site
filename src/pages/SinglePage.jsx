@@ -52,15 +52,17 @@ export default function SinglePage() {
 
       <section id="contact" aria-label="Contact" className="single-page-section single-page-contact-wrap">
         <div className="single-page-contact">
-          <div className="single-page-contact-label">Contact</div>
-          <h2>
-            Book an <em>AML Platform Demo</em>
-          </h2>
-          <p className="single-page-contact-desc">
-            Tell us your current workflow. We will show you exactly where Chronhr fits — using
-            your case types, your sources, your reporting requirements.
-          </p>
-          <ContactBlock />
+          <div className="single-page-contact-left">
+            <div className="single-page-contact-label">Contact</div>
+            <h2>
+              Book an <em>AML Platform Demo</em>
+            </h2>
+            <p className="single-page-contact-desc">
+              Tell us your current workflow. We will show you exactly where Chronhr fits — using
+              your case types, your sources, your reporting requirements.
+            </p>
+            <ContactBlock />
+          </div>
         </div>
       </section>
 

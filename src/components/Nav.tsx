@@ -22,7 +22,9 @@ function scrollToSection(id: string) {
 }
 
 function Nav() {
-  const [activeSection, setActiveSection] = useState("home");
+  const [activeSection, setActiveSection] = useState("hero");
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
   const [underline, setUnderline] = useState({ left: 0, width: 0, opacity: 0 });
   const navLinksRef = useRef<HTMLUListElement | null>(null);
   const location = useLocation();
@@ -55,6 +57,10 @@ function Nav() {
   }, [activeSection]);
 
   useEffect(() => {
+    const onScrollState = () => setIsScrolled(window.scrollY > 100);
+    window.addEventListener("scroll", onScrollState, { passive: true });
+    onScrollState();
+
     const sections = links
       .map((link) => document.getElementById(link.id))
       .filter(Boolean) as HTMLElement[];
@@ -78,6 +84,7 @@ function Nav() {
 
     return () => {
       window.removeEventListener("scroll", updateActiveSection);
+      window.removeEventListener("scroll", onScrollState);
     };
   }, []);
 
@@ -92,7 +99,7 @@ function Nav() {
   }
 
   return (
-    <nav className="nav" aria-label="Main navigation">
+    <nav className={`nav ${isScrolled ? "nav-scrolled" : ""}`} aria-label="Main navigation">
       <div className="nav-inner">
         <button
           type="button"
@@ -109,7 +116,19 @@ function Nav() {
           <span className="nav-logo-text">CHRONHR</span>
         </button>
 
-        <ul className="nav-links" ref={navLinksRef}>
+        <button
+          type="button"
+          className={`nav-mobile-toggle ${mobileOpen ? "is-open" : ""}`}
+          aria-label="Toggle navigation"
+          aria-expanded={mobileOpen}
+          onClick={() => setMobileOpen((v) => !v)}
+        >
+          <span />
+          <span />
+          <span />
+        </button>
+
+        <ul className={`nav-links ${mobileOpen ? "nav-links-open" : ""}`} ref={navLinksRef}>
           <div
             className="nav-underline"
             style={{
@@ -127,6 +146,7 @@ function Nav() {
                 onClick={(e) => {
                   e.preventDefault();
                   goToSection(link.id);
+                  setMobileOpen(false);
                 }}
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
@@ -144,6 +164,7 @@ function Nav() {
           onClick={(e) => {
             e.preventDefault();
             goToSection("contact");
+            setMobileOpen(false);
           }}
         >
           Book a demo

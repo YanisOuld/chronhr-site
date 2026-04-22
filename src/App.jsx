@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { Route, Routes, useLocation } from 'react-router-dom'
 import Nav from './components/Nav'
 import SiteFooter from './components/SiteFooter'
@@ -49,6 +49,7 @@ function setPropertyTag(property, content) {
 
 function App() {
   const { pathname } = useLocation()
+  const [scrollProgress, setScrollProgress] = useState(0)
 
   useEffect(() => {
     const seo = SEO_BY_PATH[pathname] ?? SEO_BY_PATH['/']
@@ -66,8 +67,41 @@ function App() {
     }
   }, [pathname])
 
+  useEffect(() => {
+    const onScroll = () => {
+      const doc = document.documentElement
+      const total = doc.scrollHeight - doc.clientHeight
+      const pct = total > 0 ? (window.scrollY / total) * 100 : 0
+      setScrollProgress(Math.max(0, Math.min(100, pct)))
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true })
+    onScroll()
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
+  useEffect(() => {
+    const sections = Array.from(document.querySelectorAll('section'))
+    sections.forEach((el) => el.classList.add('reveal-base'))
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible')
+          }
+        })
+      },
+      { threshold: 0.1 }
+    )
+
+    sections.forEach((el) => observer.observe(el))
+    return () => observer.disconnect()
+  }, [pathname])
+
   return (
     <>
+      <div className="scroll-progress" style={{ width: `${scrollProgress}%` }} />
       <Background />
       <ScrollToTop />
       <Nav />

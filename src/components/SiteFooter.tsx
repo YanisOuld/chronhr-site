@@ -2,7 +2,6 @@ function SiteFooter() {
   return (
     <footer>
       <div className="footer-inner">
-
         <div className="footer-top">
 
           {/* Brand */}
@@ -49,7 +48,6 @@ function SiteFooter() {
             <a href="#">Security</a>
           </div>
         </div>
-
       </div>
     </footer>
   )

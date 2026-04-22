@@ -46,6 +46,7 @@ function MemberCard({ initials, role, name, bio, linkedin, photo }) {
                   : name === "Aziz Diop"
                     ? "74% 16%"
                     : "center 10%",
+              transform: name === "Aziz Diop" ? "scale(0.84)" : "none",
             }}
           />
         ) : null}
