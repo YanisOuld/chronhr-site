@@ -14,7 +14,7 @@
 .how-item {
   position: relative;
   overflow: hidden;
-  padding: 22px 20px 18px;
+  padding: 28px 26px 36px;
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
   background: var(--surface);
@@ -219,7 +219,7 @@
   }
 
   .how-item {
-    padding: 18px 16px;
+    padding: 24px 22px 32px;
     border-right: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
   }
