@@ -4,9 +4,9 @@ Public marketing site for [Chronhr](https://chronhr.com), an AML intelligence pl
 
 ## Stack
 
-- React
-- IBM Plex Sans
-- CSS Modules
+- React + TypeScript (TSX)
+- Vite
+- Plain CSS with custom properties
 
 ## Getting Started
 
@@ -15,10 +15,14 @@ npm install
 npm run dev
 ```
 
+## Design
+
+See [design.md](./design.md) for the full design system — fonts, colors, tokens, layout, hover interactions, and component notes.
+
 ## Pages
 
-- `/` — Landing
+- `/` — Single-page landing
 - `/about` — About
 - `/team` — Meet the team
 - `/pricing` — Pricing & ROI calculator
-- `/get-started` — Contact
+- `/get-started` — Contact form

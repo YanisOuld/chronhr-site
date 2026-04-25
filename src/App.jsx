@@ -12,7 +12,7 @@ const SEO_BY_PATH = {
   '/': {
     title: 'Chronhr | AML Investigation Platform for Compliance Teams',
     description:
-      'Chronhr helps AML analysts close cases 2× faster — automated data ingestion, AI-assisted investigation, and regulator-ready STR/LCTR reports. Trusted by compliance teams. Book a demo.',
+      'Chronhr helps AML analysts close cases 2× faster automated data ingestion, AI-assisted investigation, and regulator-ready STR/LCTR reports. Trusted by compliance teams. Book a demo.',
     canonical: 'https://www.chronhr.com/',
   },
   '/get-started': {

@@ -10,7 +10,7 @@ import FoundersGrid from '../components/FoundersGrid'
 import SupportedBy from '../components/SupportedBy'
 import AdvisoryBoard from '../components/AdvisoryBoard'
 import ContactBlock from '../components/ContactBlock'
-import CtaBand from '../components/CtaBand.tsx'
+import CtaBand from '../components/CtaBand'
 
 export default function SinglePage() {
   return (
