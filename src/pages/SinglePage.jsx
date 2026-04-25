@@ -58,7 +58,7 @@ export default function SinglePage() {
               Book an <em>AML Platform Demo</em>
             </h2>
             <p className="single-page-contact-desc">
-              Tell us your current workflow. We will show you exactly where Chronhr fits — using
+              Tell us your current workflow. We will show you exactly where Chronhr fits, using
               your case types, your sources, your reporting requirements.
             </p>
             <ContactBlock />

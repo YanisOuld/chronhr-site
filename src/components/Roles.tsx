@@ -16,7 +16,7 @@ function Roles() {
           <div className="role-item">
             <h3 className="role-title">Compliance Officers</h3>
             <div className="role-desc">
-              Know exactly where every case stands — without chasing your analysts for updates.
+              Know exactly where every case stands, without chasing your analysts for updates.
             </div>
           </div>
           <div className="role-item">
@@ -39,4 +39,3 @@ function Roles() {
 }
 
 export default Roles
-

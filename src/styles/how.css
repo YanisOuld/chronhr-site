@@ -130,31 +130,24 @@
   margin-bottom: 10px;
 }
 
-.how-signal-group + .how-signal-group {
-  margin-top: 10px;
+.how-signal-table {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 12px;
+  row-gap: 6px;
+  align-items: center;
 }
 
-.how-signal-group-title {
+.how-signal-col-header {
   font-size: 0.68rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--muted);
-  margin-bottom: 6px;
-}
-
-.how-signal-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.how-signal-row + .how-signal-row {
-  margin-top: 8px;
+  padding-bottom: 4px;
 }
 
 .how-signal {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   gap: 6px;
   padding: 4px 10px;
@@ -163,6 +156,8 @@
   letter-spacing: 0.015em;
   border-radius: 999px;
   transition: transform 0.15s ease;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .how-signal:hover {

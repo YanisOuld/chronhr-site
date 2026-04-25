@@ -108,8 +108,7 @@ function RoiCalculatorSection() {
         AML Compliance <em>ROI Calculator</em>
       </h2>
       <p className="roi-calc-subtitle">
-        Adjust the inputs below to see exactly what your current workflow is costing you — and
-        how much your team recovers with Chronhr.
+        What your current workflow costs and what Chronhr gives back.
       </p>
 
       <div className="roi-calc-grid">
@@ -136,7 +135,7 @@ function RoiCalculatorSection() {
               onChange={(e) => setAnalysts(Number(e.target.value))}
               style={{ '--fill': `${((analysts - 1) / (50 - 1)) * 100}%` }}
             />
-            <span className="roi-helper">Full-time analysts dedicated to AML investigation</span>
+            <span className="roi-helper">Full-time AML analysts</span>
           </label>
 
           <label className="roi-input-item">
@@ -161,7 +160,7 @@ function RoiCalculatorSection() {
               onChange={(e) => setCasesPerAnalystPerMonth(Number(e.target.value))}
               style={{ '--fill': `${((casesPerAnalystPerMonth - 10) / (300 - 10)) * 100}%` }}
             />
-            <span className="roi-helper">Average monthly caseload per analyst</span>
+            <span className="roi-helper">Average monthly caseload</span>
           </label>
 
           <label className="roi-input-item">
@@ -194,7 +193,7 @@ function RoiCalculatorSection() {
               onChange={(e) => setHoursPerCase(Number(e.target.value))}
               style={{ '--fill': `${((hoursPerCase - 0.5) / (8 - 0.5)) * 100}%` }}
             />
-            <span className="roi-helper">Total time from data pull to report submission</span>
+            <span className="roi-helper">Data pull to report submission</span>
           </label>
 
           <label className="roi-input-item">
@@ -227,9 +226,7 @@ function RoiCalculatorSection() {
               onChange={(e) => setHourlyCost(Number(e.target.value))}
               style={{ '--fill': `${((hourlyCost - 20) / (120 - 20)) * 100}%` }}
             />
-            <span className="roi-helper">
-              Fully-loaded cost including salary, benefits and overhead
-            </span>
+            <span className="roi-helper">Salary, benefits and overhead</span>
           </label>
         </div>
 
@@ -237,20 +234,20 @@ function RoiCalculatorSection() {
           <article className="roi-card roi-card-primary">
             <div className="roi-card-label">Recovered per year</div>
             <div className="roi-card-value">{formatMoney(Math.round(animatedRecovered))}</div>
-            <div className="roi-card-sub">In analyst hours no longer spent on manual prep</div>
+            <div className="roi-card-sub">In analyst hours recovered</div>
           </article>
 
           <div className="roi-cards-row">
             <article className="roi-card">
               <div className="roi-card-label">Hours saved per year</div>
               <div className="roi-card-value">{formatNumber(Math.round(animatedHoursSaved))} h</div>
-              <div className="roi-card-sub">Redirected to higher-value investigation work</div>
+              <div className="roi-card-sub">Freed from manual prep</div>
             </article>
 
             <article className="roi-card">
-              <div className="roi-card-label">Additional cases your team can handle</div>
+              <div className="roi-card-label">Additional cases</div>
               <div className="roi-card-value">+{formatNumber(Math.round(animatedCases))} cases</div>
-              <div className="roi-card-sub">Without hiring a single additional analyst</div>
+              <div className="roi-card-sub">No additional headcount</div>
             </article>
           </div>
 
@@ -259,24 +256,18 @@ function RoiCalculatorSection() {
             <div className="roi-card-value">
               {animatedAnalystsEquivalent.toFixed(1)} analyst{Number(animatedAnalystsEquivalent.toFixed(1)) > 1 ? 's' : ''}
             </div>
-            <div className="roi-card-sub">
-              Equivalent headcount cost recovered from efficiency alone
-            </div>
+            <div className="roi-card-sub">Equivalent headcount cost recovered</div>
           </article>
         </div>
       </div>
 
       <p className="roi-insight">
-        At {formatNumber(analysts)} analysts closing {formatNumber(Math.round(values.casesPerYear))} cases a
-        year, your team spends {formatNumber(roundedHoursToday)} hours on AML work. Chronhr gives back{' '}
-        {formatNumber(roundedHoursSaved)} of those hours — the equivalent of {values.analystsEquivalent}{' '}
-        analyst salary.
+        {formatNumber(analysts)} analysts, {formatNumber(Math.round(values.casesPerYear))} cases/year.
+        {' '}{formatNumber(roundedHoursSaved)} hours recovered, equivalent to {values.analystsEquivalent} analyst{Number(values.analystsEquivalent) > 1 ? 's' : ''}.
       </p>
 
       <p className="roi-footnote">
-        Savings estimate based on a validated 2× faster case closure benchmark. Actual results vary
-        by team size, case complexity and current tooling. Industry reference: ACAMS Cost of
-        Compliance Report, Datos Insights AML Operations Survey 2024.
+        Based on a 2× faster case closure benchmark. Actual results vary. Ref: ACAMS Cost of Compliance Report, Datos Insights 2024.
       </p>
 
       <div className="roi-cta-group">
@@ -293,7 +284,7 @@ function RoiCalculatorSection() {
             }
           }}
         >
-          See it on a real case — book a 30 min demo
+          See it on a real case. Book a 30 min demo.
         </a>
       </div>
     </section>
