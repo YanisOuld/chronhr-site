@@ -18,7 +18,7 @@ function HowItWorks() {
               <span className="how-tag">Actimize</span>
               <span className="how-tag">Snowflake</span>
             </div>
-            Every source your case needs — transactions, KYC, sanctions, OSINT — pulled
+            Every source your case needs: transactions, KYC, sanctions, OSINT, pulled
             automatically into one normalized workspace. Your analysts open a case. The data is
             already there.
           </div>
@@ -34,7 +34,7 @@ function HowItWorks() {
               <span className="how-tag">Risk scoring</span>
             </div>
             Purpose-built investigation tools that surface what matters: a relational graph, AI
-            chatbot, case timeline and risk scoring — all pre-loaded with your case data. No
+            chatbot, case timeline and risk scoring, all pre-loaded with your case data. No
             dashboard setup. No context switching. Just the analysis.
           </div>
         </div>
@@ -58,35 +58,35 @@ function HowItWorks() {
       <div className="how-signals" aria-label="Detection signals">
         <div className="how-signals-title">Every escalation decision is explainable.</div>
         <p className="how-signals-intro">
-          Chronhr doesn&apos;t just flag cases — it shows its work. Every escalation and clearance is
+          Chronhr doesn&apos;t just flag cases. It shows its work. Every escalation and clearance is
           backed by documented signals, so your team can defend any decision in front of a
           regulator.
         </p>
 
-        <div className="how-signal-group">
-          <div className="how-signal-group-title">Escalation signals (red flags)</div>
-          <div className="how-signal-row" aria-label="High-risk signals">
-            <span className="how-signal how-signal-risk"><span className="how-signal-icon" aria-hidden="true">!</span>Structuring</span>
-            <span className="how-signal how-signal-risk"><span className="how-signal-icon" aria-hidden="true">!</span>Layering</span>
-            <span className="how-signal how-signal-risk"><span className="how-signal-icon" aria-hidden="true">!</span>PEP exposed</span>
-            <span className="how-signal how-signal-risk"><span className="how-signal-icon" aria-hidden="true">!</span>Sanctions hit</span>
-            <span className="how-signal how-signal-risk"><span className="how-signal-icon" aria-hidden="true">!</span>KYC mismatch</span>
-            <span className="how-signal how-signal-risk"><span className="how-signal-icon" aria-hidden="true">!</span>High velocity</span>
-            <span className="how-signal how-signal-risk"><span className="how-signal-icon" aria-hidden="true">!</span>Negative media</span>
-          </div>
-        </div>
+        <div className="how-signal-table">
+          <div className="how-signal-col-header how-signal-col-header--risk">Escalation signals (red flags)</div>
+          <div className="how-signal-col-header how-signal-col-header--safe">Clearance signals (confidence checks)</div>
 
-        <div className="how-signal-group">
-          <div className="how-signal-group-title">Clearance signals (confidence checks)</div>
-          <div className="how-signal-row" aria-label="Low-risk signals">
-            <span className="how-signal how-signal-safe"><span className="how-signal-icon" aria-hidden="true">✓</span>Verified KYC</span>
-            <span className="how-signal how-signal-safe"><span className="how-signal-icon" aria-hidden="true">✓</span>Clear sanctions</span>
-            <span className="how-signal how-signal-safe"><span className="how-signal-icon" aria-hidden="true">✓</span>Documented SOF</span>
-            <span className="how-signal how-signal-safe"><span className="how-signal-icon" aria-hidden="true">✓</span>Valid business</span>
-            <span className="how-signal how-signal-safe"><span className="how-signal-icon" aria-hidden="true">✓</span>Real address</span>
-            <span className="how-signal how-signal-safe"><span className="how-signal-icon" aria-hidden="true">✓</span>Stable pattern</span>
-            <span className="how-signal how-signal-safe"><span className="how-signal-icon" aria-hidden="true">✓</span>Known vendor</span>
-          </div>
+          <span className="how-signal how-signal-risk"><span className="how-signal-icon" aria-hidden="true">!</span>Structuring</span>
+          <span className="how-signal how-signal-safe"><span className="how-signal-icon" aria-hidden="true">✓</span>Verified KYC</span>
+
+          <span className="how-signal how-signal-risk"><span className="how-signal-icon" aria-hidden="true">!</span>Layering</span>
+          <span className="how-signal how-signal-safe"><span className="how-signal-icon" aria-hidden="true">✓</span>Clear sanctions</span>
+
+          <span className="how-signal how-signal-risk"><span className="how-signal-icon" aria-hidden="true">!</span>PEP exposed</span>
+          <span className="how-signal how-signal-safe"><span className="how-signal-icon" aria-hidden="true">✓</span>Documented SOF</span>
+
+          <span className="how-signal how-signal-risk"><span className="how-signal-icon" aria-hidden="true">!</span>Sanctions hit</span>
+          <span className="how-signal how-signal-safe"><span className="how-signal-icon" aria-hidden="true">✓</span>Valid business</span>
+
+          <span className="how-signal how-signal-risk"><span className="how-signal-icon" aria-hidden="true">!</span>KYC mismatch</span>
+          <span className="how-signal how-signal-safe"><span className="how-signal-icon" aria-hidden="true">✓</span>Real address</span>
+
+          <span className="how-signal how-signal-risk"><span className="how-signal-icon" aria-hidden="true">!</span>High velocity</span>
+          <span className="how-signal how-signal-safe"><span className="how-signal-icon" aria-hidden="true">✓</span>Stable pattern</span>
+
+          <span className="how-signal how-signal-risk"><span className="how-signal-icon" aria-hidden="true">!</span>Negative media</span>
+          <span className="how-signal how-signal-safe"><span className="how-signal-icon" aria-hidden="true">✓</span>Known vendor</span>
         </div>
       </div>
     </div>
@@ -94,4 +94,3 @@ function HowItWorks() {
 }
 
 export default HowItWorks
-

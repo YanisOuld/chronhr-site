@@ -298,7 +298,7 @@ function Hero() {
           </h1>
 
           <p className="hero-body hero-reveal-item">
-            Chronhr gives them back that time — with a single workspace that ingests,
+            Chronhr gives them back that time with a single workspace that ingests,
             analyzes and files. From case intake to regulator-ready report, without the
             manual work.
           </p>
@@ -510,7 +510,7 @@ function Hero() {
           <div className="hero-stat">
             <div className="hero-stat-kicker">2×</div>
             <div className="hero-stat-num">Faster case closure</div>
-            <div className="hero-stat-label">From intake to submission — not just analysis</div>
+            <div className="hero-stat-label">From intake to submission, not just analysis</div>
           </div>
           <div className="hero-stat">
             <div className="hero-stat-kicker">100%</div>

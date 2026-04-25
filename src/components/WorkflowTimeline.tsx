@@ -1,16 +1,23 @@
 import { useEffect, useRef, useState } from 'react'
 
-const steps = [
+interface Step {
+  num: string
+  title: string
+  desc: string
+  tools: string[]
+}
+
+const steps: Step[] = [
   {
     num: '01',
     title: 'Case intake & data fetch',
-    desc: `A case is opened. Chronhr immediately pulls all related data — transactions, account history, counterparties, sanctions lists — into a single workspace. No manual export. No copy-paste. The analyst arrives to a complete picture.`,
+    desc: `A case is opened. Chronhr immediately pulls all related data: transactions, account history, counterparties, sanctions lists, into a single workspace. No manual export. No copy-paste. The analyst arrives to a complete picture.`,
     tools: ['CSV / SWIFT ingestion', 'SQL connectors', 'REST APIs', 'Auto-normalization', 'Duplicate detection'],
   },
   {
     num: '02',
     title: 'Automatic tool generation',
-    desc: `Based on the data loaded, Chronhr generates the right analysis tools for that specific case — relationship graph, cash flow view, transaction timeline. No configuration. No setup. The analyst interprets, not builds.`,
+    desc: `Based on the data loaded, Chronhr generates the right analysis tools for that specific case: relationship graph, cash flow view, transaction timeline. No configuration. No setup. The analyst interprets, not builds.`,
     tools: ['Relationship graph', 'Cash flow analysis', 'User card', 'Transaction timeline', 'Network map', 'Counterparty breakdown', 'Sanctions screening'],
   },
   {
@@ -22,23 +29,23 @@ const steps = [
   {
     num: '04',
     title: 'AI assistant',
-    desc: `Ask the case anything. The AI chatbot understands the loaded data and responds in context — summarize activity, identify anomalies, surface patterns. It works like a senior analyst who has already read the full file.`,
+    desc: `Ask the case anything. The AI chatbot understands the loaded data and responds in context: summarize activity, identify anomalies, surface patterns. It works like a senior analyst who has already read the full file.`,
     tools: ['Case Q&A', 'Anomaly detection', 'Pattern comparison', 'Natural language queries'],
   },
   {
     num: '05',
     title: 'Assisted report writing',
-    desc: `The case is ready. Chronhr drafts the STR or LCTR automatically — pulling from the data, annotations and findings. The analyst reviews, adjusts if needed, and submits. No blank page. No formatting errors. Compliant on the first attempt.`,
+    desc: `The case is ready. Chronhr drafts the STR or LCTR automatically, pulling from the data, annotations and findings. The analyst reviews, adjusts if needed, and submits. No blank page. No formatting errors. Compliant on the first attempt.`,
     tools: ['STR generation', 'LCTR generation', 'FINTRAC compliance check', 'Version history'],
   },
 ]
 
 export default function WorkflowTimeline() {
   const isMobile = typeof window !== 'undefined' && window.matchMedia('(max-width: 640px)').matches
-  const timelineRef = useRef(null)
-  const stepRefs = useRef([])
+  const timelineRef = useRef<HTMLDivElement>(null)
+  const stepRefs = useRef<(HTMLDivElement | null)[]>([])
   const [fillPct, setFillPct] = useState(isMobile ? 100 : 0)
-  const [activeSteps, setActiveSteps] = useState(isMobile ? steps.map(() => true) : [])
+  const [activeSteps, setActiveSteps] = useState<boolean[]>(isMobile ? steps.map(() => true) : [])
 
   useEffect(() => {
     if (isMobile) {
@@ -100,10 +107,8 @@ export default function WorkflowTimeline() {
           />
         </svg>
 
-        {/* background track */}
         <div className="timeline-track" />
 
-        {/* filled progress line */}
         <div
           className="timeline-fill"
           style={{ height: `${fillPct}%` }}
@@ -113,7 +118,7 @@ export default function WorkflowTimeline() {
           <div
             key={step.num}
             className={`step step--n${i + 1} ${i % 2 === 0 ? 'step--left' : 'step--right'} ${i === steps.length - 1 ? 'step--last' : ''} ${activeSteps[i] ? 'step--active' : ''}`}
-            ref={(el) => (stepRefs.current[i] = el)}
+            ref={(el) => { stepRefs.current[i] = el }}
           >
             <div className="step-node" aria-hidden="true">
               <div className="step-dot" />
@@ -133,7 +138,6 @@ export default function WorkflowTimeline() {
             </article>
           </div>
         ))}
-
       </div>
     </div>
   )
