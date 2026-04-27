@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Chronhr one-pager</title>
+    <link rel="stylesheet" href="/src/styles/main.css">
+  </head>
+  <body>
+
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink)}
+.pg{max-width:820px;margin:0 auto;padding:24px 32px;font-size:13px;line-height:1.6}
+
+.hdr{display:flex;justify-content:space-between;align-items:flex-start;padding-bottom:14px;border-bottom:2px solid var(--ink);margin-bottom:18px}
+.logo{font-size:24px;font-weight:900;letter-spacing:-0.05em;color:var(--ink);line-height:1}
+.logo-sub{font-size:10px;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase;font-weight:500;margin-top:4px}
+.hdr-right{text-align:right}
+.badge{background:var(--ink);color:var(--white);padding:5px 13px;border-radius:4px;font-size:10px;font-weight:700;letter-spacing:0.05em;display:inline-block;margin-bottom:3px}
+.hdr-url{font-size:10px;color:var(--brand);font-weight:600;display:block}
+
+/* HERO */
+.hero{margin-bottom:10px;min-height:auto;border-bottom:none}
+.kicker{display:inline-block;background:var(--brand);color:var(--white);font-size:9px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;padding:4px 10px;border-radius:3px;margin-bottom:14px}
+.hero-inner{position:relative;display:block}
+.hero-copy{padding-right:220px}
+.hero h1{font-size:30px;font-weight:900;letter-spacing:-0.04em;line-height:1.05;margin-bottom:14px}
+.hero h1 em{font-style:normal;color:var(--brand)}
+.hero-sub{font-size:12px;color:var(--muted);line-height:1.6;margin-bottom:16px}
+.hero-sub strong{color:var(--ink);font-weight:700}
+
+/* Timeline strip */
+.timeline{display:flex;align-items:stretch;gap:0;margin-bottom:0;border:1.5px solid var(--border);border-radius:8px;overflow:hidden}
+.tl-step{flex:1;padding:10px 11px;position:relative}
+.tl-step:not(:last-child){border-right:1.5px solid var(--border)}
+.tl-step.bad{background:var(--surface)}
+.tl-step.good{background:var(--surface)}
+.tl-num{font-size:8.5px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--brand);margin-bottom:4px}
+.tl-title{font-size:11px;font-weight:700;color:var(--ink);margin-bottom:2px;line-height:1.3}
+.tl-desc{font-size:9.5px;color:var(--muted);line-height:1.4}
+.tl-arrow{position:absolute;right:-8px;top:50%;transform:translateY(-50%);width:15px;height:15px;background:var(--bg);border:1.5px solid var(--border);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:8px;color:var(--brand);font-weight:700;z-index:1}
+
+.stat-box{background:var(--brand-soft);border:1.5px solid var(--border);border-radius:10px;padding:14px 12px;text-align:center;max-width:200px;position:absolute;right:0;top:0}
+.sb-num{font-size:36px;font-weight:900;letter-spacing:-0.05em;color:var(--brand-deep);line-height:1;display:block;margin-bottom:6px}
+.sb-lbl{font-size:10px;color:var(--ink);line-height:1.45}
+
+.slabel{font-size:9px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--brand);margin-bottom:8px}
+
+/* PAIN */
+.pain{background:var(--surface);border:1.5px solid var(--border);border-radius:10px;padding:18px 20px;margin:0 0 12px}
+.pain h2{font-size:17px;font-weight:800;letter-spacing:-0.03em;line-height:1.15;margin-bottom:16px;color:var(--ink)}
+.stat-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:12px}
+.s-box{background:var(--white);border:1.5px solid var(--border);border-radius:7px;padding:12px;text-align:center}
+.s-num{font-size:22px;font-weight:900;letter-spacing:-0.03em;color:var(--brand-deep);display:block;line-height:1;margin-bottom:5px}
+.s-lbl{font-size:10px;color:var(--muted);line-height:1.4}
+.pain-list{display:flex;flex-direction:column;gap:8px}
+.pi{display:flex;gap:10px;align-items:flex-start}
+.pidot{width:18px;height:18px;min-width:18px;border-radius:50%;background:var(--brand);display:flex;align-items:center;justify-content:center;font-size:9px;color:var(--white);font-weight:800;margin-top:1px}
+.pitext{font-size:11.5px;color:var(--muted);line-height:1.5}
+.pitext strong{color:var(--ink);font-weight:700}
+
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px}
+
+.sol h2{font-size:16px;font-weight:800;letter-spacing:-0.03em;line-height:1.15;margin-bottom:6px}
+.sol-sub{font-size:11px;color:var(--muted);margin-bottom:14px;line-height:1.5}
+.sol-cards{display:flex;flex-direction:column;gap:8px}
+.sc{background:var(--white);border:1.5px solid var(--border);border-left:3px solid var(--brand);border-radius:0 6px 6px 0;padding:9px 11px}
+.sc h3{font-size:11.5px;font-weight:700;margin-bottom:3px;color:var(--ink)}
+.sc p{font-size:10.5px;color:var(--muted);line-height:1.5}
+
+.impact h2{font-size:16px;font-weight:800;letter-spacing:-0.03em;line-height:1.15;margin-bottom:6px}
+.impact-sub{font-size:11px;color:var(--muted);margin-bottom:14px;line-height:1.5}
+.ic-cards{display:flex;flex-direction:column;gap:8px}
+.ic{background:var(--brand-soft);border:1.5px solid var(--border);border-radius:7px;padding:10px 12px;display:flex;align-items:center;gap:12px;min-height:52px}
+.ic-num{font-size:18px;font-weight:900;letter-spacing:-0.03em;color:var(--brand-deep);line-height:1.1;min-width:64px;flex-shrink:0}
+.ic-desc{font-size:10.5px;color:var(--ink);line-height:1.45}
+.impact-note{font-size:9.5px;color:var(--muted);margin-top:8px;font-style:italic;line-height:1.45;border-top:1px solid var(--border);padding-top:6px}
+
+.nr{background:var(--brand-soft);border:1.5px solid var(--border);border-radius:7px;padding:10px 14px;margin-bottom:12px;display:flex;align-items:center;gap:12px}
+.nr-lbl{font-size:9px;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;color:var(--brand-deep);white-space:nowrap}
+.nr-div{width:1px;height:22px;background:rgba(255,255,255,0.15);flex-shrink:0}
+.nr-items{display:flex;flex-wrap:wrap;gap:6px 20px}
+.nri{font-size:10.5px;color:var(--ink);display:flex;align-items:center;gap:5px}
+.nri::before{content:'✓';font-weight:800;color:var(--brand);font-size:10px}
+
+.pilot{background:var(--brand-soft);border:1.5px solid var(--border);border-radius:10px;padding:18px 20px;margin-bottom:12px}
+.pilot h2{font-size:16px;font-weight:800;letter-spacing:-0.03em;margin-bottom:4px;color:var(--ink)}
+.pilot-sub{font-size:11px;color:var(--muted);margin-bottom:14px;line-height:1.5}
+.pilot-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:10px}
+.pi2{background:var(--white);border:1.5px solid var(--border);border-radius:5px;padding:8px 10px}
+.pi2 .pl{font-size:8.5px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--brand);margin-bottom:3px}
+.pi2 .pv{font-size:10.5px;font-weight:600;color:var(--ink);line-height:1.35}
+.guarantees{display:flex;flex-wrap:wrap;gap:6px 20px}
+.g{display:flex;align-items:center;gap:6px;font-size:10.5px;color:var(--ink)}
+.g::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--brand);flex-shrink:0;display:inline-block}
+
+.team h2{font-size:14px;font-weight:800;letter-spacing:-0.02em;margin-bottom:12px}
+.team-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:8px}
+.tc{background:var(--surface);border:1.5px solid var(--border);border-radius:7px;padding:14px}
+.tc-role{font-size:8.5px;font-weight:700;color:var(--brand);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:2px}
+.tc-name{font-size:13px;font-weight:800;margin-bottom:5px;letter-spacing:-0.02em}
+.tc-bio{font-size:10px;color:var(--muted);line-height:1.5}
+.adv-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:8px}
+.adv{background:var(--surface);border:1.5px solid var(--border);border-radius:7px;padding:11px 12px;display:flex;gap:10px;align-items:flex-start}
+.adv-init{width:30px;height:30px;min-width:30px;border-radius:50%;background:var(--brand);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:var(--white)}
+.adv-name{font-size:11px;font-weight:700;margin-bottom:2px}
+.adv-title{font-size:9.5px;color:var(--muted);line-height:1.4}
+.backers{display:flex;gap:8px}
+.bkr{background:var(--brand-soft);border:1.5px solid var(--border);border-radius:5px;padding:6px 12px;font-size:10.5px;font-weight:600;color:var(--brand-deep)}
+
+.footer{border-top:2px solid var(--ink);background:var(--brand-soft);padding:12px 16px 10px;display:flex;justify-content:space-between;align-items:flex-end;margin-top:4px;border-radius:7px}
+.footer-l .site{font-size:12px;font-weight:800;color:var(--ink)}
+.footer-l .cta-txt{font-size:10.5px;color:var(--muted);margin-top:2px}
+.footer-l .email{font-size:12px;font-weight:700;color:var(--brand);margin-top:3px;display:block}
+.footer-r{font-size:9.5px;color:var(--muted);text-align:right}
+
+@media (max-width: 820px) {
+  .pg { padding: 20px 18px; }
+  .hero-copy { padding-right: 0; }
+  .stat-box { position: static; max-width: none; margin-top: 12px; }
+  .hero h1 { font-size: 26px; }
+  .hero-inner { display: block; }
+}
+
+@media (max-width: 640px) {
+  .pg { padding: 18px 14px; }
+  .hdr { flex-direction: column; gap: 10px; }
+  .hdr-right { text-align: left; }
+  .hero h1 { font-size: 24px; }
+  .hero-sub { font-size: 12px; }
+  .timeline { flex-direction: column; }
+  .tl-step:not(:last-child) { border-right: 0; border-bottom: 1.5px solid var(--border); }
+  .tl-arrow { display: none; }
+  .stat-row { grid-template-columns: 1fr; }
+  .two-col { grid-template-columns: 1fr; }
+  .pilot-grid { grid-template-columns: 1fr 1fr; }
+  .team-grid { grid-template-columns: 1fr; }
+  .adv-grid { grid-template-columns: 1fr; }
+  .footer { flex-direction: column; align-items: flex-start; gap: 8px; }
+  .footer-r { text-align: left; }
+}
+
+@media (max-width: 420px) {
+  .hero h1 { font-size: 22px; }
+  .pilot-grid { grid-template-columns: 1fr; }
+  .nr { flex-direction: column; align-items: flex-start; }
+  .nr-items { gap: 6px 12px; }
+}
+</style>
+
+<div class="pg">
+
+  <header class="hdr">
+    <div>
+      <div class="logo">Chronhr</div>
+      <div class="logo-sub">AML Investigation Support</div>
+    </div>
+    <div class="hdr-right">
+      <div class="badge">Pilot Program · 2026</div>
+      <span class="hdr-url">chronhr.com</span>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="kicker">The problem we are fixing</div>
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <h1>Your analysts spend <em>60% of their time</em><br>gathering data.<br>Not analyzing it.</h1>
+        <p class="hero-sub"><strong>And it is costing you a lot of money.</strong> Every alert forces investigators to rebuild the same case context across disconnected tools before they can make a judgment. Chronhr turns that manual assembly work into an automated, standardized investigation workspace.</p>
+
+        <!-- Investigation workflow timeline -->
+        <div class="timeline">
+          <div class="tl-step bad">
+            <div class="tl-num">Step 1</div>
+            <div class="tl-title">Alert fires</div>
+            <div class="tl-desc">Case assigned to investigator</div>
+            <div class="tl-arrow">›</div>
+          </div>
+          <div class="tl-step bad">
+            <div class="tl-num">Step 2 &nbsp;·&nbsp; 60% of time</div>
+            <div class="tl-title">Data gathering</div>
+            <div class="tl-desc">5 to 8 systems navigated per alert, every single case.</div>
+            <div class="tl-arrow">›</div>
+          </div>
+          <div class="tl-step bad">
+            <div class="tl-num">Step 3 &nbsp;·&nbsp; high variability</div>
+            <div class="tl-title">Case quality varies</div>
+            <div class="tl-desc">Outcome depends on who picks it up that day.</div>
+            <div class="tl-arrow">›</div>
+          </div>
+          <div class="tl-step good">
+            <div class="tl-num">Step 4 &nbsp;·&nbsp; real exposure</div>
+            <div class="tl-title">Audit risk remains</div>
+            <div class="tl-desc">Inconsistent documentation and missed entity links.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="stat-box">
+        <span class="sb-num">60%</span>
+        <span class="sb-lbl">of analyst time is spent gathering data instead of analyzing risk</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="pain">
+    <div class="slabel">The real cost of today's workflow</div>
+    <h2>Your highest-cost AML work is being spent on low-value manual assembly.</h2>
+    <div class="stat-row">
+      <div class="s-box"><span class="s-num">5 to 8</span><span class="s-lbl">disconnected systems navigated per alert, every single case</span></div>
+      <div class="s-box"><span class="s-num">High</span><span class="s-lbl">analyst variability: case quality depends on who picks it up that day</span></div>
+      <div class="s-box"><span class="s-num">Real</span><span class="s-lbl">audit exposure from inconsistent documentation and missed entity links</span></div>
+    </div>
+    <div class="pain-list">
+      <div class="pi"><div class="pidot">!</div><div class="pitext"><strong>Manual gathering drains capacity.</strong> Analysts spend most of the investigation collecting data across systems before they can assess risk.</div></div>
+      <div class="pi"><div class="pidot">!</div><div class="pitext"><strong>Entity links stay hidden.</strong> Customers, accounts, businesses and counterparties are connected in the real world, but disconnected in the investigation workflow.</div></div>
+      <div class="pi"><div class="pidot">!</div><div class="pitext"><strong>Every case becomes a documentation risk.</strong> When each analyst builds the file differently, review quality becomes inconsistent and harder to defend.</div></div>
+    </div>
+  </section>
+
+  <div class="two-col">
+    <section class="sol">
+      <div class="slabel">What Chronhr does</div>
+      <h2>Chronhr turns fragmented alerts into investigation-ready cases and SAR-ready reports.</h2>
+      <p class="sol-sub">Instead of forcing analysts to chase data across disconnected systems, Chronhr automatically builds the case context, surfaces entity relationships, guides the review, and prepares structured investigation reports without replacing your existing AML stack.</p>
+      <div class="sol-cards">
+        <div class="sc"><h3>Investigation-ready case files</h3><p>At alert open, Chronhr auto-assembles transactions, KYC, sanctions, prior alerts, counterparties, and related parties into a single case workspace.</p></div>
+        <div class="sc"><h3>Entity links surfaced instantly</h3><p>Chronhr maps customers, accounts, businesses, and counterparties so investigators see the full network behind each alert immediately.</p></div>
+        <div class="sc"><h3>Standardized review, stronger defensibility</h3><p>Every analyst follows the same structured path, reducing variability, missed steps, and weak documentation.</p></div>
+        <div class="sc"><h3>SAR-ready report generation</h3><p>When escalation is needed, Chronhr produces a structured SAR-ready draft with facts, transaction context, entity links, red flags, and analyst rationale.</p></div>
+        <div class="sc"><h3>Faster judgment, human-controlled decisions</h3><p>Chronhr removes manual prep so analysts decide faster while retaining full control of judgment, escalation, and SAR filing.</p></div>
+      </div>
+    </section>
+
+    <section class="impact">
+      <div class="slabel">Expected operational impact</div>
+      <h2>What this gives your AML team.</h2>
+      <p class="impact-sub">More analyst capacity, more consistent investigations, and cleaner audit trails measured against your current baseline during the 3-month pilot.</p>
+      <div class="ic-cards">
+        <div class="ic">
+          <div class="ic-num">2 to 3x</div>
+          <div class="ic-desc">Faster case preparation by removing repetitive data gathering across 5 to 8 systems</div>
+        </div>
+        <div class="ic">
+          <div class="ic-num">30 to 50%</div>
+          <div class="ic-desc">Potential reduction in AML investigation costs through fewer manual steps and higher analyst throughput</div>
+        </div>
+        <div class="ic">
+          <div class="ic-num" style="font-size:15px;line-height:1.2">Analyst<br>consistency</div>
+          <div class="ic-desc">Standardized reviews so case quality depends less on individual analyst habits</div>
+        </div>
+      </div>
+      <p class="impact-note">Figures are working hypotheses validated against your baseline during the pilot: time spent gathering data, time to complete review, documentation quality, and entity-link coverage.</p>
+    </section>
+  </div>
+
+  <div class="nr">
+    <div class="nr-lbl">Zero risk to deploy</div>
+    <div class="nr-div"></div>
+    <div class="nr-items">
+      <div class="nri">No stack replacement</div>
+      <div class="nri">No data migration</div>
+      <div class="nri">Read-only access</div>
+      <div class="nri">No decisions automated</div>
+      <div class="nri">Live in days</div>
+    </div>
+  </div>
+
+  <section class="pilot">
+    <div class="slabel">Structured pilot program</div>
+    <h2>3 months. Live investigations. Defined success criteria.</h2>
+    <p class="pilot-sub">A controlled pilot with clear metrics agreed in week 1 and a formal conversion decision within 2 weeks of close.</p>
+    <div class="pilot-grid">
+      <div class="pi2"><div class="pl">Duration</div><div class="pv">3 months on live investigations</div></div>
+      <div class="pi2"><div class="pl">Team size</div><div class="pv">2 to 3 investigators</div></div>
+      <div class="pi2"><div class="pl">Setup</div><div class="pv">Read-only access, no IT project</div></div>
+      <div class="pi2"><div class="pl">Decision</div><div class="pv">Formal review within 2 weeks of close</div></div>
+    </div>
+    <div class="guarantees">
+      <div class="g">No data stored outside your environment</div>
+      <div class="g">No model trained on your data</div>
+      <div class="g">Pilot rate locked for year 1 upon conversion</div>
+      <div class="g">Success metrics defined together in week 1</div>
+    </div>
+  </section>
+
+  <section class="team">
+    <h2>Built by practitioners, backed by the best</h2>
+    <div class="team-grid">
+      <div class="tc"><div class="tc-role">CEO &amp; Co-Founder</div><div class="tc-name">Aziz Diop</div><div class="tc-bio">PhD candidate in AI at Polytechnique Montreal. Former quantitative software engineer at Morgan Stanley. Deep expertise in machine learning and financial systems.</div></div>
+      <div class="tc"><div class="tc-role">CTO &amp; Co-Founder</div><div class="tc-name">Yanis Ould</div><div class="tc-bio">Full-stack software engineer with strong systems architecture expertise. CFA candidate bringing technical depth and financial markets understanding to the product.</div></div>
+    </div>
+    <div class="adv-grid">
+      <div class="adv"><div class="adv-init">BL</div><div><div class="adv-name">Boubacar Leye</div><div class="adv-title">Senior Compliance Manager, 20+ years in global financial crime, AML and reputational risk. HSBC / ESSEC Business School</div></div></div>
+      <div class="adv"><div class="adv-init">DV</div><div><div class="adv-name">David Vijan, CAMS, CBP</div><div class="adv-title">CEO, Outlier Compliance Group. AML/CTF, fraud investigations, FinTech and digital currency. Princeton University</div></div></div>
+    </div>
+    <div class="backers">
+      <div class="bkr">NEXT AI, Next Canada, Montreal</div>
+      <div class="bkr">Propolys, Polytechnique Montreal</div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-l">
+      <div class="site">chronhr.com</div>
+      <div class="cta-txt">Ready to run a pilot? Reach out.</div>
+      <a class="email" href="mailto:contact@chronhr.com">contact@chronhr.com</a>
+    </div>
+    <div class="footer-r">Chronhr &nbsp;|&nbsp; Confidential &nbsp;|&nbsp; 2026</div>
+  </footer>
+
+</div>
+
+  </body>
+</html>
