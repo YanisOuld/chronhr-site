@@ -4,13 +4,29 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Chronhr one-pager</title>
-    <link rel="stylesheet" href="/src/styles/main.css">
   </head>
   <body>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700;800&display=swap');
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--bg);color:var(--ink)}
+html{background:var(--bg)}
+body{font-family:'IBM Plex Sans',sans-serif;background:var(--bg);color:var(--ink);font-weight:400;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+:root{
+  --bg:#F5F2FA;
+  --ink:#0F1117;
+  --muted:#84827D;
+  --border:#DDD8EA;
+  --white:#FFFFFF;
+  --brand:#8660b8;
+  --brand-strong:#7445ad;
+  --brand-deep:#5c2f93;
+  --brand-soft:#f3eef8;
+  --surface:rgba(255,255,255,0.78);
+  --surface-strong:rgba(255,255,255,0.94);
+  --shadow-glow:0 0 0 1px rgba(115,84,133,0.08),0 18px 44px rgba(94,67,112,0.14);
+}
+.pg{max-width:820px;margin:0 auto;padding:24px 32px;font-size:13px;line-height:1.6}
 .pg{max-width:820px;margin:0 auto;padding:24px 32px;font-size:13px;line-height:1.6}
 
 .hdr{display:flex;justify-content:space-between;align-items:flex-start;padding-bottom:14px;border-bottom:2px solid var(--ink);margin-bottom:18px}
